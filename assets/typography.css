@@ -1,0 +1,5 @@
+area:focus{
+  border: none;
+  outline-style: none; 
+  -moz-outline-style:none;  
+}
