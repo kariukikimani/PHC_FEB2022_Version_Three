@@ -66,3 +66,19 @@ def gen_main_graph(facility, y_axis):
     
     return main_grf
 main_graph = gen_main_graph(facility[0], y_cols[0])
+
+###############################################################
+
+notes_df = pd.read_csv('data/notes_template.csv', encoding='UTF-8')
+# print(notes_df.head())
+
+def generic_notes_qas(sel_aim):
+    generic_all_df = notes_df[notes_df['Facility'] == 'General']
+    #print(generic_all_df)
+    aim_col_name = 'Quadruple ' + sel_aim.split('#')[1]
+    # print(aim_col_name)
+    aim_note_df = generic_all_df[generic_all_df['Aim_sl'] == aim_col_name]
+    # print(aim_note_df['Desc'].values[0])
+    return aim_note_df['Desc'].values[0]
+    
+generic_notes_qas('#Aim1')

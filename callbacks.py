@@ -11,17 +11,14 @@ import dash_html_components as html
 from app import app
 import data_n_graphs as grf
 
-@app.callback(Output('page-content', 'children'),
+@app.callback([Output('page-content', 'children'),
+               Output('qa_generic', 'children')],
               [Input('url', 'hash')])
 def display_page(pathname):
-    if pathname == '#Aim1':
-        return html.Div("About the Aim1")
-    elif pathname == '#Aim2':
-        return html.Div("About the Aim2")
-    elif pathname == '#Aim3':
-        return "About the Aim3"
-    elif pathname == '#Aim4':
-        return "About the Aim4"
+    generic_notes = grf.generic_notes_qas(pathname)
+    temp_placeholder = "About the " + pathname
+    return temp_placeholder, generic_notes
+    
     
 @app.callback([Output('desc_table', 'figure'),
                Output('bar_graph', 'figure')],

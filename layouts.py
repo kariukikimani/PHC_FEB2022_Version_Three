@@ -32,7 +32,9 @@ body = html.Div([
                 html.Area(target='', alt='Aim3', title='Lower Cost of Care', href='#Aim3', coords='250,250,500,500', shape='rect'),
                 html.Area(target='', alt='Aim4', title='Improved Staff Experience', href='#Aim4', coords='0,250,250,500', shape='rect'),
             ],name='map'),
-            html.Img(src='assets/quad_aim.png', useMap='#map')
+            html.Img(src='assets/quad_aim.png', useMap='#map'),
+            
+            html.Div(id='qa_generic')
         ], width=4),
         
         ### Main column of graphs from annual_data
@@ -57,15 +59,16 @@ body = html.Div([
                 ], style={"margin-left": "15px"})
             ]),
             dbc.Row([
+                
+                dcc.Graph(
+                    id='bar_graph',
+                    figure=grf.main_graph,
+                    style = {'width':'50%', 'height':'30%'} #
+                ),
                 ### Description
                 dcc.Graph(
                     id='desc_table',
                     figure=grf.desc_table,
-                    style = {'width':'50%', 'height':'30%'} #
-                ),
-                dcc.Graph(
-                    id='bar_graph',
-                    figure=grf.main_graph,
                     style = {'width':'50%', 'height':'30%'} #
                 ),
                 
