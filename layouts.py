@@ -50,11 +50,11 @@ body = html.Div([
                 )
                 ]),
                 
-                html.Label(["Select KPI to display", 
+                html.Label(["Select graph to display", 
                 dcc.Dropdown(
-                    id='y_axis',
-                    options=[{'label': i, 'value': i} for i in grf.y_cols],
-                    value=grf.y_cols[0]
+                    id='graph_id',
+                    options=[{'label': i, 'value': i} for i in grf.graph_lst],
+                    value=grf.graph_lst[0]
                 )
                 ], style={"margin-left": "15px"})
             ]),
@@ -77,7 +77,16 @@ body = html.Div([
             
              dbc.Row([
                 ### Quadruple aim
-                html.Div(id='page-content'), 
+                html.Div(id='kpi-content',
+                    style={'visibility':'hidden'},
+                    children = [
+                        dcc.Graph(
+                            id='kpi_table',
+                            figure=grf.kpi_table,
+                            style = {'width':'100%', 'height':'100%'} #
+                        ),
+                        
+                ])
             ])
         ]),
         

@@ -15,7 +15,6 @@ app.layout = html.Div([
     lyt.main_page
 ])
 
-
 app.config.suppress_callback_exceptions = True
 if __name__ == '__main__':
     app.run_server(debug=False)

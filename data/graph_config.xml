@@ -1,0 +1,22 @@
+<graphs>
+    <DPT_comparison_graph>
+        <col1>DPT1_n</col1>
+        <col2>DPT3_n</col2>
+        <title>Number of children under the age of 1year immunized with DPT1 and DPT3 per year</title>
+        <y_title>Number of children</y_title>
+        <type>bar-bar</type>
+    </DPT_comparison_graph>
+    <ANC_comparison_graph>
+        <col1>First_ANC</col1>
+        <col2>ANC_4visits</col2>
+        <title>Number of 1st and 4th antenatal visit clients per year</title>
+        <y_title>Number of antenatal visits</y_title>
+        <type>bar-line</type>
+    </ANC_comparison_graph>
+    <GOPD_graph>
+        <col1>GOPD_n</col1>
+        <title>Number of clients seen at general outpatient deparment (GOPD) per year</title>
+        <y_title>Number of clients seen</y_title>
+        <type>bar</type>
+    </GOPD_graph>
+</graphs>
