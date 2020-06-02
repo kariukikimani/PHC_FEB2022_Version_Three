@@ -13,12 +13,16 @@ import data_n_graphs as grf
 
 @app.callback([Output('qa_generic', 'children'), 
                Output('kpi-content', 'style'),
-               Output('kpi_table', 'figure')],
+               Output('kpi_table', 'figure'),
+               Output('kpi-content2', 'style'),
+               Output('kpi_chart', 'figure')],
               [Input('url', 'hash'),
                Input('facility_select', 'value')])
 def display_page(pathname, facility):
     generic_notes, kpi_content_style, facility_kpi_table = grf.qa_descs(pathname, facility)
-    return generic_notes, kpi_content_style, facility_kpi_table
+    kpi_content2 = kpi_content_style
+    kpi_chart = grf.kpi_graphs(pathname,facility, kpi_content_style)
+    return generic_notes, kpi_content_style, facility_kpi_table, kpi_content2, kpi_chart
     
     
 @app.callback([Output('desc_table', 'figure'),

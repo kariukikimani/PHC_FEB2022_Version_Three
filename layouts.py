@@ -77,6 +77,7 @@ body = html.Div([
             
              dbc.Row([
                 ### Quadruple aim
+                dbc.Col([
                 html.Div(id='kpi-content',
                     style={'visibility':'hidden'},
                     children = [
@@ -85,8 +86,21 @@ body = html.Div([
                             figure=grf.kpi_table,
                             style = {'width':'100%', 'height':'100%'} #
                         ),
-                        
                 ])
+                ]),
+                dbc.Col([
+                    html.Div(id='kpi-content2',
+                        style={'visibility':'hidden'},
+                        children = [
+                            dcc.Graph(
+                                id='kpi_chart',
+                                figure=grf.kpi_chart,
+                                style = {'width':'100%', 'height':'100%'}
+                            )
+                        ]
+                    )
+                ]),
+                
             ])
         ]),
         

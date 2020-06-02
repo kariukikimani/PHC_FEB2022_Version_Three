@@ -1,0 +1,18 @@
+<kpis>
+    <aim1>
+        <kpi1>
+            <col>DPT3_n</col>
+            <text>Children receiving DPT3</text>
+        </kpi1>
+        <kpi2>
+            <col>ANC_4visits</col>
+            <text>Women attending 4 ANC visits</text>
+        </kpi2>
+    </aim1>
+    <aim2>
+        <kpi1>
+            <col>FSB_rateper1000</col>
+            <text>FSB rate/ 1000 births</text>
+        </kpi1>
+    </aim2>
+</kpis>

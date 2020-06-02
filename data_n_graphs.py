@@ -8,16 +8,20 @@ import plotly.graph_objects as go
 import pandas as pd
 import xml.etree.ElementTree as ET
 
-tree = ET.parse('data/graph_config.xml')
-root = tree.getroot()
+graph_tree = ET.parse('data/graph_config.xml')
+graph_root = graph_tree.getroot()
 
 annual_df = pd.read_csv('data/annual_data.csv')
 facility = annual_df['Facility name'].unique()
 
 notes_df = pd.read_excel('data/Kenya KPI dashboard notes.xlsx')
 
+kpi_tree = ET.parse('data/KPI_config.xml')
+kpi_root = kpi_tree.getroot()
+
+
 def graph_dropdown():
-    graph_lst = [x.tag for x in root]
+    graph_lst = [x.tag for x in graph_root]
     return graph_lst
 graph_lst = graph_dropdown()
 
@@ -60,7 +64,7 @@ desc_table = gen_desc_content(facility[0])
 def gen_main_graph(facility, sel_graph):
     fac_filter = annual_df[annual_df['Facility name'] == facility]
     
-    sel_tag = root.find(sel_graph)
+    sel_tag = graph_root.find(sel_graph)
     
     sel_tag_type = sel_tag.find('type')
     graph_type = sel_tag_type.text
@@ -144,3 +148,59 @@ def qa_descs(sel_aim, facility):
     return generic_kpi_note, {'visibility':'visible'}, kpi_table
    
 kpi_table = go.Figure()
+
+def kpi_graphs(sel_aim, facility, visibility):
+    if visibility == {'visibility':'hidden'}:
+        return 0
+    selected_aim = sel_aim.split('#')[1]
+    selected_aim = selected_aim.lower()
+
+    facility_df = annual_df[annual_df['Facility name'] == facility]
+   
+    kpi_df = pd.DataFrame(columns=['Start Year', 'End Year', 'Start Year Value', 'End Year Value', 'Change %'])
+   
+    aim_tag = kpi_root.find(selected_aim)
+    for i,each in enumerate(aim_tag):
+        
+        col_tag = each.find('col')
+        col_name = col_tag.text
+        
+        req_df_temp = facility_df[['Year', col_name]]
+        req_df = req_df_temp.dropna()
+        
+        start_year = min(req_df['Year'])
+        end_year = max(req_df['Year'])
+        start_val = req_df[req_df['Year'] == start_year][col_name].values[0]
+        end_val = req_df[req_df['Year'] == end_year][col_name].values[0]
+        change = round((end_val - start_val)/start_val * 100, 1)
+        cell_color = 'green' if change > 0 else 'red'
+        print(cell_color)
+        
+        
+        kpi_df = kpi_df.append({'Start Year' : start_year,
+                                'End Year': end_year,
+                                'Start Year Value': start_val,
+                                'End Year Value': end_val,
+                                'Change %': change}, ignore_index=True)
+    
+    
+    kpi_chart = go.Figure(data=[go.Table(
+        header=dict(values=list(kpi_df.columns),
+                    line_color='black',
+                    fill_color='lightgrey'),
+        cells=dict(values=[kpi_df['Start Year'], kpi_df['End Year'], kpi_df['Start Year Value'], kpi_df['End Year Value'], kpi_df['Change %']],
+                   fill_color=['white', 'white', 'white', 'white', cell_color],
+                   align='left',
+                   font_size=14,
+                   line_color='black',
+                   ))#height=30
+            ])
+   
+    kpi_chart.update_layout(
+        margin=dict(l=10, r=10, t=25, b=10), #Plotly padding reduction
+    )
+    return kpi_chart
+    
+kpi_chart = go.Figure()
+    
+    
