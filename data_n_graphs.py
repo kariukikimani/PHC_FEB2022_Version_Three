@@ -157,13 +157,15 @@ def kpi_graphs(sel_aim, facility, visibility):
 
     facility_df = annual_df[annual_df['Facility name'] == facility]
    
-    kpi_df = pd.DataFrame(columns=['Start Year', 'End Year', 'Start Year Value', 'End Year Value', 'Change %'])
+    kpi_df = pd.DataFrame(columns=['KPI','Start Year', 'End Year', 'Start Year Value', 'End Year Value', 'Change %'])
    
     aim_tag = kpi_root.find(selected_aim)
     for i,each in enumerate(aim_tag):
-        
         col_tag = each.find('col')
         col_name = col_tag.text
+        
+        kpi_name_tag = each.find('kpiname')
+        kpi_name = kpi_name_tag.text
         
         req_df_temp = facility_df[['Year', col_name]]
         req_df = req_df_temp.dropna()
@@ -174,10 +176,10 @@ def kpi_graphs(sel_aim, facility, visibility):
         end_val = req_df[req_df['Year'] == end_year][col_name].values[0]
         change = round((end_val - start_val)/start_val * 100, 1)
         cell_color = 'green' if change > 0 else 'red'
-        print(cell_color)
         
         
-        kpi_df = kpi_df.append({'Start Year' : start_year,
+        kpi_df = kpi_df.append({'KPI': kpi_name,
+                                'Start Year' : start_year,
                                 'End Year': end_year,
                                 'Start Year Value': start_val,
                                 'End Year Value': end_val,
@@ -188,8 +190,8 @@ def kpi_graphs(sel_aim, facility, visibility):
         header=dict(values=list(kpi_df.columns),
                     line_color='black',
                     fill_color='lightgrey'),
-        cells=dict(values=[kpi_df['Start Year'], kpi_df['End Year'], kpi_df['Start Year Value'], kpi_df['End Year Value'], kpi_df['Change %']],
-                   fill_color=['white', 'white', 'white', 'white', cell_color],
+        cells=dict(values=[kpi_df['KPI'], kpi_df['Start Year'], kpi_df['End Year'], kpi_df['Start Year Value'], kpi_df['End Year Value'], kpi_df['Change %']],
+                   fill_color=['white','white', 'white', 'white', 'white', cell_color],
                    align='left',
                    font_size=14,
                    line_color='black',
