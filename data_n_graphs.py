@@ -47,13 +47,20 @@ def gen_desc_content(facility):
         cells=dict(values=[desc_df['Col_name'], desc_df['Values']],
                    fill_color='white',
                    align='left',
-                   font_size=14,
+                   font_size=16,
                    line_color='black',
-                   ))#height=30
+                   height=25
+                   ))
             ])
     # info_tab.layout['template']['data']['table'][0]['header']['fill']['color']='rgba(0,0,0,0)' #Not displaying header
     info_tab.update_layout(
         margin=dict(l=10, r=10, t=25, b=10), #Plotly padding reduction
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(
+            family="Arial, Helvetica, sans-serif",
+            size=16
+            )
     )
     
 
@@ -81,7 +88,7 @@ def gen_main_graph(facility, sel_graph):
         sel_tag_y = sel_tag.find('col1')
         y_axis = sel_tag_y.text
         main_grf.add_trace(
-            go.Bar(x=fac_filter['Year'], y=fac_filter[y_axis])
+            go.Bar(x=fac_filter['Year'], y=fac_filter[y_axis], marker_color='#008080')
         )
     else:
         sel_tag_col1 = sel_tag.find('col1')
@@ -89,25 +96,32 @@ def gen_main_graph(facility, sel_graph):
         sel_tag_col2 = sel_tag.find('col2')
         y2 = sel_tag_col2.text
         main_grf.add_trace(
-            go.Bar(x=fac_filter['Year'], y=fac_filter[y1], name=y1)
+            go.Bar(x=fac_filter['Year'], y=fac_filter[y1], name=y1, marker_color='#008080')
         )
         if graph_type == 'bar-bar':
             main_grf.add_trace(
-                go.Bar(x=fac_filter['Year'], y=fac_filter[y2], name=y2)
+                go.Bar(x=fac_filter['Year'], y=fac_filter[y2], name=y2, marker_color='#c2c2a3')
             )
         else:
             main_grf.add_trace(
-                go.Scatter(x=fac_filter['Year'], y=fac_filter[y2], name=y2)
+                go.Scatter(x=fac_filter['Year'], y=fac_filter[y2], name=y2, marker_color='#ff9900', marker_size=5, marker_line_width=5)
             )
         
     
     main_grf.update_layout(
-        margin=dict(l=10, r=10, t=25, b=10),
+        margin=dict(l=10, r=10, t=45, b=10),
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)'
     )
     main_grf.update_layout(
         title= graph_title + ' for ' + facility,
         xaxis_title='Year',
-        yaxis_title=y_title)
+        yaxis_title=y_title,
+        font=dict(
+            family="Arial, Helvetica, sans-serif",
+            size=18
+            )
+        )
     
     return main_grf
 main_graph = gen_main_graph(facility[0], graph_lst[0])
@@ -117,7 +131,10 @@ main_graph = gen_main_graph(facility[0], graph_lst[0])
 ### KPI Section
 
 def qa_descs(sel_aim, facility):
-    selected_aim = sel_aim.split('#')[1]
+    try:
+        selected_aim = sel_aim.split('#')[1]
+    except:
+        return 'No information available', {'visibility':'hidden'}, go.Figure()
     
     
     facility_df = notes_df[notes_df['Facility'] == facility]
@@ -133,18 +150,26 @@ def qa_descs(sel_aim, facility):
     kpi_table = go.Figure(data=[go.Table(
         header=dict(values=['Indicator', 'Indicator description', 'Results'],
                     line_color='black',
-                    fill_color='lightgrey'),
+                    fill_color='#ccff33'),
         cells=dict(values=[facility_kpi_table['Indicator'], facility_kpi_table['Indicator description'], facility_kpi_table['Results']],
-                   fill_color='white',
+                   fill_color='#ebebe0',
                    align='left',
-                   font_size=14,
+                   font_size=18,
                    line_color='black',
-                   ))#height=30
+                   height=30
+                   ))
             ])
    
     kpi_table.update_layout(
         margin=dict(l=10, r=10, t=25, b=10), #Plotly padding reduction
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(
+            family="Arial, Helvetica, sans-serif",
+            size=18
+            )
     )
+    
     return generic_kpi_note, {'visibility':'visible'}, kpi_table
    
 kpi_table = go.Figure()
@@ -189,20 +214,31 @@ def kpi_graphs(sel_aim, facility, visibility):
     kpi_chart = go.Figure(data=[go.Table(
         header=dict(values=list(kpi_df.columns),
                     line_color='black',
-                    fill_color='lightgrey'),
+                    fill_color='#ccff33'),
         cells=dict(values=[kpi_df['KPI'], kpi_df['Start Year'], kpi_df['End Year'], kpi_df['Start Year Value'], kpi_df['End Year Value'], kpi_df['Change %']],
-                   fill_color=['white','white', 'white', 'white', 'white', cell_color],
+                   fill_color=['#ebebe0','#ebebe0','#ebebe0','#ebebe0','#ebebe0', cell_color],
                    align='left',
-                   font_size=14,
+                   font_size=16,
                    line_color='black',
-                   ))#height=30
+                   height=30
+                   ))
             ])
    
     kpi_chart.update_layout(
         margin=dict(l=10, r=10, t=25, b=10), #Plotly padding reduction
+        paper_bgcolor='rgba(0,0,0,0)',
+        plot_bgcolor='rgba(0,0,0,0)',
+        font=dict(
+            family="Arial, Helvetica, sans-serif",
+            size=18
+            )
     )
     return kpi_chart
     
 kpi_chart = go.Figure()
+kpi_chart.update_layout(
+    paper_bgcolor='rgba(0,0,0,0)',
+    plot_bgcolor='rgba(0,0,0,0)'
+    )
     
     

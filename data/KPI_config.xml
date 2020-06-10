@@ -8,11 +8,39 @@
             <col>ANC_4visits</col>
             <kpiname>Women attending 4 ANC visits</kpiname>
         </kpi2>
+        <kpi3>
+            <col>GOPD_n</col>
+            <kpiname>GOPD visits</kpiname>
+        </kpi3>
+        <kpi4>
+            <col>ANC_n</col>
+            <kpiname>ANC visits</kpiname>
+        </kpi4>
+        <kpi5>
+            <col>CWC_n</col>
+            <kpiname>CWC visits</kpiname>
+        </kpi5>
+        <kpi6>
+            <col>deliveries_n</col>
+            <kpiname>Deliveries</kpiname>
+        </kpi6>
     </aim1>
     <aim2>
         <kpi1>
             <col>FSB_rateper1000</col>
             <kpiname>FSB rate/ 1000 births</kpiname>
         </kpi1>
+        <kpi2>
+            <col>LBW&lt;2500g</col>
+            <kpiname>% LBW &lt; 2500g)</kpiname>
+        </kpi2>
+        <kpi3>
+            <col>pre-term</col>
+            <kpiname>% pre-term births</kpiname>
+        </kpi3>
+        <kpi4>
+            <col>FIC</col>
+            <kpiname>Number of fully immunized children &lt; 1yr</kpiname>
+        </kpi4>
     </aim2>
 </kpis>

@@ -3,3 +3,18 @@ area:focus{
   outline-style: none; 
   -moz-outline-style:none;  
 }
+.nav_bar{
+    background: rgb(250,255,255);
+    background: linear-gradient(90deg, rgba(250,255,255,0.4322771344866071) 0%, rgba(109,235,155,0.6787757339263831) 30%, rgba(109,235,155,0.72919590199361) 60%, rgba(250,255,255,1) 100%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 48px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+.kpi_text {
+    background-color: #ccff33;
+    font-size: 36px;
+}

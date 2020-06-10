@@ -17,7 +17,7 @@ from datetime import datetime as dt
 
 body = html.Div([
     ### Heading Row
-    dbc.Row(dbc.Col(html.H1("CLC KPI Dashboard", style={'text-align' : 'center'}))),
+    dbc.Row(dbc.Col(html.H1("Kenya Community Life Centers: KPIs dashboard", style={'text-align' : 'center'}), className='nav_bar')),
     dbc.Row(dbc.Col(html.Div(html.Hr()))),
     
     
@@ -34,7 +34,7 @@ body = html.Div([
             ],name='map'),
             html.Img(src='assets/quad_aim.png', useMap='#map'),
             
-            html.Div(id='qa_generic')
+            html.Div(id='qa_generic', className='kpi_text')
         ], width=4),
         
         ### Main column of graphs from annual_data
