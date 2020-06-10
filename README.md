@@ -8,4 +8,4 @@ __Features__ :
 - Dynamic Site selection and reactive graphs
 - <coming soon>
 
-![Screenshot](assets/v1.png)
+![Screenshot](assets/v2.png)
