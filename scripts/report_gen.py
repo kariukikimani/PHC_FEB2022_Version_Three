@@ -5,7 +5,6 @@ Created on Thu Jun 18 15:07:10 2020
 @author: Syamanthaka
 """
 import pandas as pd
-import plotly.graph_objects as go
 import xml.etree.ElementTree as ET
 import generic_functs as gf
 
@@ -66,6 +65,6 @@ ending = """
 
 report_html = beginning + graph_html + ending
 
-with open("file1.html", "w") as file:
+with open("report.html", "w") as file:
     file.write(report_html)
 

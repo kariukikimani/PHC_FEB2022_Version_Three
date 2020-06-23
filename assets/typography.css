@@ -10,6 +10,19 @@ area:focus{
     font-size: 48px;
 }
 
+.nav_links_left{
+    float: left;
+    position: absolute;
+    left: 0px;
+    font-size: 24px;
+}
+.nav_links_right{
+    float: right;
+    position: absolute;
+    right: 0px;
+    font-size: 24px;
+}
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;

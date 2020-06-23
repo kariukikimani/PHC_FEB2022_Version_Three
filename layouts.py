@@ -13,13 +13,28 @@ import data_n_graphs as grf
 
 ## Main Home Page
 ##################################################################################################
+#Nav bar items
+heading = html.H1("Kenya Community Life Centers: KPIs dashboard", style={'text-align' : 'center'})
+home_link = html.A("Home", href='/', className='nav_links_left')
+report_img = html.A(html.Img(src='assets/download_img.jpg', alt='Report', style={
+                    'height' : '50px',
+                    'width' : '50px',
+                    'padding-top' : 0,
+                    'padding-right' : 0
+                }, className='nav_links_right'), href='/get_report', target='_blank')
+    
+# clubbing navbar items
+title = dbc.NavbarSimple(
+    children=[heading, home_link, report_img],
+    className="nav_bar",
+)
+
 
 body = html.Div([
     ### Heading Row
-    dbc.Row(dbc.Col(html.H1("Kenya Community Life Centers: KPIs dashboard", style={'text-align' : 'center'}), className='nav_bar')),
+    title,
     dbc.Row(dbc.Col(html.Div(html.Hr()))),
-    
-    
+
     dbc.Row([
         ### Left Column for quadruple aims
         dbc.Col([

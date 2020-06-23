@@ -6,10 +6,14 @@ Created on Tue May 19 14:35:13 2020
 """
 
 from dash.dependencies import Input, Output
-import dash_html_components as html
+import flask
 
 from app import app
 import data_n_graphs as grf
+
+@app.server.route("/get_report")
+def get_report():
+    return flask.send_from_directory('scripts/', "report.html")
 
 @app.callback([Output('qa_generic', 'children'), 
                Output('kpi-content', 'style'),
