@@ -14,6 +14,7 @@ __FEATURES__
 - Dynamic Site selection and reactive graphs
 - Graphs can be configured in an external xml file
 - KPI charts can be configured in an external xml file
+- Static html report can be downloaded with full interactivity for offline use
 
 __SCREENSHOT__
 
