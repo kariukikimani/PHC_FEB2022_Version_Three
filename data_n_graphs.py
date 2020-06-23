@@ -198,7 +198,7 @@ def kpi_graphs(sel_aim, facility, visibility):
 
     facility_df = annual_df[annual_df['Facility name'] == facility]
    
-    kpi_df = pd.DataFrame(columns=['KPI','Start Year', 'End Year', 'Start Year Value', 'End Year Value', 'Change %'])
+    kpi_df = pd.DataFrame(columns=['KPI','Start Year', 'End Year', 'Start Year Value', 'End Year Value', 'Change %', 'Status'])
    
     #Get KPI metric info from KPI config file
     aim_tag = kpi_root.find(selected_aim)
@@ -216,8 +216,11 @@ def kpi_graphs(sel_aim, facility, visibility):
         end_year = max(req_df['Year'])
         start_val = req_df[req_df['Year'] == start_year][col_name].values[0]
         end_val = req_df[req_df['Year'] == end_year][col_name].values[0]
-        change = round((end_val - start_val)/start_val * 100, 1)
-        cell_color = 'green' if change > 0 else 'red'#Positive change is green and -ve is red
+        if start_val == 0:
+            change = 'inf'
+        else:
+            change = round((end_val - start_val)/start_val * 100, 1)
+        cell_color = 'green' if float(change) > 0 else 'red'#Positive change is green and -ve is red
         
         
         kpi_df = kpi_df.append({'KPI': kpi_name,
@@ -225,15 +228,16 @@ def kpi_graphs(sel_aim, facility, visibility):
                                 'End Year': end_year,
                                 'Start Year Value': start_val,
                                 'End Year Value': end_val,
-                                'Change %': change}, ignore_index=True)
+                                'Change %': change,
+                                'Status': cell_color}, ignore_index=True)
     
     # Return metrics as graph object Table, with color for hange value to indicate red or green status
     kpi_chart = go.Figure(data=[go.Table(
-        header=dict(values=list(kpi_df.columns),
+        header=dict(values=list(kpi_df.columns[:-1]),
                     line_color='black',
                     fill_color='#ccff33'),
         cells=dict(values=[kpi_df['KPI'], kpi_df['Start Year'], kpi_df['End Year'], kpi_df['Start Year Value'], kpi_df['End Year Value'], kpi_df['Change %']],
-                   fill_color=['#ebebe0','#ebebe0','#ebebe0','#ebebe0','#ebebe0', cell_color],
+                   fill_color=['#ebebe0','#ebebe0','#ebebe0','#ebebe0','#ebebe0', kpi_df['Status']],
                    align='left',
                    font_size=16,
                    line_color='black',
