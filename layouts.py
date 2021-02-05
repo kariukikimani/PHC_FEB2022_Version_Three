@@ -14,7 +14,7 @@ import data_n_graphs as grf
 ## Main Home Page
 ##################################################################################################
 #Nav bar items
-heading = html.H1("Kenya Community Life Centers: KPIs dashboard", style={'text-align' : 'center'})
+heading = html.H1("CPCS: IMPACT DASHBOARD", style={'text-align': 'center'})
 home_link = html.A("Home", href='/', className='nav_links_left')
 report_img = html.A(html.Img(src='assets/download_img.jpg', alt='Report', style={
                     'height' : '50px',
