@@ -14,38 +14,59 @@ import data_n_graphs as grf
 ## Main Home Page
 ##################################################################################################
 #Nav bar items
-heading = html.H1("CPCS: IMPACT DASHBOARD", style={'text-align': 'center'})
-home_link = html.A("Home", href='/', className='nav_links_left')
-report_img = html.A(html.Img(src='assets/download_img.jpg', alt='Report', style={
-                    'height' : '50px',
-                    'width' : '50px',
-                    'padding-top' : 0,
-                    'padding-right' : 0
-                }, className='nav_links_right'), href='/get_report', target='_blank')
-    
-# clubbing navbar items
-title = dbc.NavbarSimple(
-    children=[heading, home_link, report_img],
-    className="nav_bar",
-)
+def Navbar():
+    navbar = dbc.NavbarSimple(
+        children=[
+            dbc.NavItem(dbc.NavLink("Home", href='')),
+            dbc.DropdownMenu(
+                children=[
 
+                    html.Div([html.A('Quartely Data', href='/', target='_blank', style={
+                        'textAlign': 'center',
+                        'margin-left': '15px',
+                        "font-size": "14px",
+                        'family': "Times New Roman, Times, serif"
+                    }, )]),
+                    html.Div([html.A('Reports', href='/get_report', target='_blank', style={
+                        'textAlign': 'center',
+                        'margin-left': '15px',
+                        "font-size": "14px",
+                        'family': "Times New Roman, Times, serif"
+                    }, )]),
+                ],
+
+                nav=True,
+                in_navbar=True,
+                label="More",
+            ),
+        ],
+        brand="PRIMARY HEALTHCARE DASHBOARDS", style={"font-weight": "bold",
+                                                      "font-size": "18px",
+                                                      'family': "Times New Roman,Times,serif",
+                                                      },
+        color="primary",
+        dark=True,
+    )
+    return navbar
 
 body = html.Div([
     ### Heading Row
-    title,
+    Navbar(),
     dbc.Row(dbc.Col(html.Div(html.Hr()))),
 
     dbc.Row([
         ### Left Column for quadruple aims
         dbc.Col([
-            html.Div("Quadruple aims"),
+            html.Div("Quadruple aims", style={"font-weight": "bold",
+                                              "font-size": "20px",
+                                              'family': "Times New Roman,Times,serif"}),
             dcc.Location(id='url', refresh=False),
             html.MapEl([
                 html.Area(target='', alt='Aim1', title='Improved Patient Experience', href='#Aim1', coords='0,0,250,250', shape='rect'),
                 html.Area(target='', alt='Aim2', title='Better Health Outcomes', href='#Aim2', coords='250,0,500,250', shape='rect'),
                 html.Area(target='', alt='Aim3', title='Lower Cost of Care', href='#Aim3', coords='250,250,500,500', shape='rect'),
                 html.Area(target='', alt='Aim4', title='Improved Staff Experience', href='#Aim4', coords='0,250,250,500', shape='rect'),
-            ],name='map'),
+            ], name='map'),
             html.Img(src='assets/quad_aim.png', useMap='#map'),
             
             html.Div(id='qa_generic', className='kpi_text')
@@ -56,35 +77,56 @@ body = html.Div([
             dbc.Row([
                 
                 ### Facility drop down
-                html.Label(["Select Facility from the list", 
+                html.Label(["",
+                html.Span("Select Facility From the List:",
+                          style={"font-weight": "bold",
+                                 "font-size": "18px",
+                                 'family': "Times New Roman,Times,serif"}),
                 dcc.Dropdown(
                     id='facility_select',
                     options=[{'label': i, 'value': i} for i in grf.facility],
                     value=grf.facility[0]
                 )
-                ]),
+                ], style={
+                            'textAlign': 'center',
+                            'margin-left': '15px',
+                            "font-size": "14px",
+                            'family': "Times New Roman, Times, serif"
+                           }),
                 
-                html.Label(["Select graph to display", 
+                html.Label(["",
+                html.Span("Select Analysis Graph to Display:",
+                                   style={"font-weight": "bold",
+                                          "font-size": "18px",
+                                          'family': "Times New Roman,Times,serif"}),
                 dcc.Dropdown(
                     id='graph_id',
                     options=[{'label': i, 'value': i} for i in grf.graph_lst],
                     value=grf.graph_lst[0]
                 )
-                ], style={"margin-left": "15px"})
+                ],  style={
+                            'textAlign': 'center',
+                            'margin-left': '15px',
+                            "font-size": "14px",
+                            'family': "Times New Roman, Times, serif"
+                           })
+                           #style={"margin-left": "15px"})
+
             ]),
             dbc.Row([
-                
-                dcc.Graph(
-                    id='bar_graph',
-                    figure=grf.main_graph,
-                    style = {'width':'50%', 'height':'30%'} #
-                ),
                 ### Description
                 dcc.Graph(
                     id='desc_table',
                     figure=grf.desc_table,
-                    style = {'width':'50%', 'height':'30%'} #
+                    style={'width': '80%', 'height': '50%'}  #
                 ),
+
+                dcc.Graph(
+                    id='bar_graph',
+                    figure=grf.main_graph,
+                    style = {'width':'94%', 'height':'30%'} #
+                ),
+
                 
             ]),
             
@@ -109,7 +151,7 @@ body = html.Div([
                             dcc.Graph(
                                 id='kpi_chart',
                                 figure=grf.kpi_chart,
-                                style = {'width':'100%', 'height':'30%'}
+                                style = {'width':'100%', 'height':'100%'}
                             )
                         ]
                     )

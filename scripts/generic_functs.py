@@ -110,12 +110,13 @@ def gen_desc_content(annual_df, facility, request):
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         font=dict(
-            family="Arial, Helvetica, sans-serif",
+            family="Times New Roman, Times, serif",
             size=16
             )
     )
     if request == 'report':
-        info_tab = info_tab.to_html(include_plotlyjs=False, full_html=False, default_height='450px', default_width='600px')
+        info_tab = info_tab.to_html(include_plotlyjs=False, full_html=False, default_height='450px',
+                                    default_width='1000px')
     return info_tab
 
 ###############################################################
@@ -160,7 +161,7 @@ def qa_descs(notes_df, sel_aim, facility, request):
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         font=dict(
-            family="Arial, Helvetica, sans-serif",
+            font_family="Times New Roman, Times, serif",
             size=18
             )
     )
@@ -231,6 +232,7 @@ def kpi_graphs(annual_df, kpi_root, sel_aim, facility, request, visibility=None)
                    fill_color=['#ebebe0','#ebebe0','#ebebe0','#ebebe0','#ebebe0', kpi_df['Status']],
                    align='left',
                    font_size=16,
+                   family="Times New Roman, Times, serif",
                    line_color='black',
                    height=30
                    ))
@@ -241,11 +243,12 @@ def kpi_graphs(annual_df, kpi_root, sel_aim, facility, request, visibility=None)
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
         font=dict(
-            family="Arial, Helvetica, sans-serif",
+            family="Times New Roman, Times, serif",
             size=18
             )
     )
     
     if request == 'report':
-        kpi_chart = kpi_chart.to_html(include_plotlyjs=False, full_html=False, default_height='450px', default_width='600px')
+        kpi_chart = kpi_chart.to_html(include_plotlyjs=False, full_html=False, default_height='450px',
+                                      default_width='1000px')
     return kpi_chart

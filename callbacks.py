@@ -37,4 +37,4 @@ def facility_updates(facility, graph_id):
     desc_tab = grf.gen_desc_content(facility)
     bar_graph = grf.gen_main_graph(facility, graph_id)
     return desc_tab, bar_graph
-    
+

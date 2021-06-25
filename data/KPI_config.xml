@@ -1,7 +1,7 @@
 <kpis>
     <aim1>
         <kpi1>
-            <col>DPT3_n</col>
+            <col>DPT3</col>
             <kpiname>Children receiving DPT3</kpiname>
         </kpi1>
         <kpi2>
@@ -9,19 +9,19 @@
             <kpiname>Women attending 4 ANC visits</kpiname>
         </kpi2>
         <kpi3>
-            <col>GOPD_n</col>
+            <col>GOPD</col>
             <kpiname>GOPD visits</kpiname>
         </kpi3>
         <kpi4>
-            <col>ANC_n</col>
+            <col>ANC</col>
             <kpiname>ANC visits</kpiname>
         </kpi4>
         <kpi5>
-            <col>CWC_n</col>
+            <col>CWC</col>
             <kpiname>CWC visits</kpiname>
         </kpi5>
         <kpi6>
-            <col>deliveries_n</col>
+            <col>deliveries</col>
             <kpiname>Deliveries</kpiname>
         </kpi6>
     </aim1>
@@ -43,4 +43,17 @@
             <kpiname>Number of fully immunized children &lt; 1yr</kpiname>
         </kpi4>
     </aim2>
+    <aim3>
+         <kpi1>
+            <col>NHIF_claims</col>
+            <kpiname>Total reimbursements from  NHIF (Kshs)</kpiname>
+        </kpi1>
+    </aim3>
+    <aim4>
+         <kpi1>
+            <col>aim4</col>
+            <kpiname>aim4</kpiname>
+        </kpi1>
+    </aim4>
+
 </kpis>
