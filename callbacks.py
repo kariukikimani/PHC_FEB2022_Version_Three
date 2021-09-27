@@ -10,6 +10,7 @@ import flask
 
 from app import app
 import data_n_graphs as grf
+import data_m_graphs as grp
 
 @app.server.route("/get_report")
 def get_report():
@@ -37,4 +38,7 @@ def facility_updates(facility, graph_id):
     desc_tab = grf.gen_desc_content(facility)
     bar_graph = grf.gen_main_graph(facility, graph_id)
     return desc_tab, bar_graph
-
+def facility_update(facility, graph_id):
+    desc_tab = grp.gen_desc_content(facility)
+    bar_graph = grp.gen_main_graph(facility, graph_id)
+    return desc_tab, bar_graph

@@ -1,0 +1,43 @@
+<monthgraphs>
+    <GOPD_graph>
+        <col1>GOPD</col1>
+        <title>Number of clients seen at general outpatient deparment (GOPD) per Month</title>
+        <y_title>Number of Clients Seen</y_title>
+        <type>line</type>
+    </GOPD_graph>
+
+     <CWC_graph>
+        <col1>CWC</col1>
+        <title>Number of clients seen at child welfare clinic (CWC) per Month</title>
+        <y_title>Number of Clients Seen</y_title>
+        <type>line</type>
+    </CWC_graph>
+
+    <ANC_graph>
+        <col1>ANC</col1>
+        <title>Number of clients seen at antenatal care clinic (ANC) per Month</title>
+        <y_title>Number of Clients Seen</y_title>
+        <type>line</type>
+    </ANC_graph>
+
+     <PNC_graph>
+        <col1>PNC</col1>
+        <title>Number of clients seen at prenatal care clinic (PNC) per Month</title>
+        <y_title>Number of Clients Seen</y_title>
+        <type>line</type>
+    </PNC_graph>
+
+     <FP_graph>
+        <col1>FP</col1>
+        <title>Number of clients seen at Family Planning (FP) per Month</title>
+        <y_title>Number of clients seen</y_title>
+        <type>line</type>
+    </FP_graph>
+
+      <Deliveries_graph>
+        <col1>Deliveries</col1>
+        <title>Number of deliveries per Month</title>
+        <y_title>Number of deliveries</y_title>
+        <type>bar</type>
+    </Deliveries_graph>
+</monthgraphs>

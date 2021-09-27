@@ -9,6 +9,9 @@ import dash_core_components as dcc
 import dash_html_components as html
 import dash_bootstrap_components as dbc
 import data_n_graphs as grf
+from apps import MonthlyData, home, navigation
+from dash.dependencies import Input, Output, State
+from app import app
 
 
 ## Main Home Page
@@ -17,7 +20,7 @@ import data_n_graphs as grf
 def Navbar():
     navbar = dbc.NavbarSimple(
         children=[
-            dbc.NavItem(dbc.NavLink("Home", href='')),
+            dbc.NavItem(dbc.NavLink("Home", href='/')),
             dbc.DropdownMenu(
                 children=[
 
@@ -52,6 +55,7 @@ def Navbar():
 body = html.Div([
     ### Heading Row
     Navbar(),
+
     dbc.Row(dbc.Col(html.Div(html.Hr()))),
 
     dbc.Row([
@@ -68,14 +72,14 @@ body = html.Div([
                 html.Area(target='', alt='Aim4', title='Improved Staff Experience', href='#Aim4', coords='0,250,250,500', shape='rect'),
             ], name='map'),
             html.Img(src='assets/quad_aim.png', useMap='#map'),
-            
+
             html.Div(id='qa_generic', className='kpi_text')
         ], width=4),
-        
+
         ### Main column of graphs from annual_data
         dbc.Col([
             dbc.Row([
-                
+
                 ### Facility drop down
                 html.Label(["",
                 html.Span("Select Facility From the List:",
@@ -93,7 +97,7 @@ body = html.Div([
                             "font-size": "14px",
                             'family': "Times New Roman, Times, serif"
                            }),
-                
+
                 html.Label(["",
                 html.Span("Select Analysis Graph to Display:",
                                    style={"font-weight": "bold",
@@ -127,10 +131,10 @@ body = html.Div([
                     style = {'width':'94%', 'height':'30%'} #
                 ),
 
-                
+
             ]),
-            
-            
+
+
              dbc.Row([
                 ### Quadruple aim
                 dbc.Col([
@@ -156,20 +160,15 @@ body = html.Div([
                         ]
                     )
                 ]),
-                
+
             ])
         ]),
-        
+
     ]),
-    
-    
+
+
     dbc.Row(dbc.Col(html.Div(html.Hr())))
 ])
-
 ##################################################################################################
 
-
-main_page = dbc.Container([
-      body
-], fluid=True)
-                
+main_page = dbc.Container([ body],fluid = True)

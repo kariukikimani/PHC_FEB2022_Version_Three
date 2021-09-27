@@ -104,6 +104,35 @@ def gen_desc_content(annual_df, facility, request):
                    height=25
                    ))
             ])
+
+    ## Function to generate the main graph
+    def gen_descr_content(monthly_df, facility, request):
+        info_df = monthly_df.iloc[:, 0:9]  # First 9 columns contain description info
+        info_df_fac = info_df[info_df['Facility name'] == facility]  # Filter for chosen facility
+
+        ### Transpose description information
+        desc_df = pd.DataFrame(columns=['Col_name', 'Values'])
+        for col in info_df_fac.columns:
+            uniq_vals = info_df_fac[col].unique()
+            if (len(uniq_vals) == 1):
+                the_val = uniq_vals[0]
+            elif (len(uniq_vals) > 1):
+                the_val = [x + "\n" for x in uniq_vals]
+            else:
+                the_val = ''
+            desc_df = desc_df.append({'Col_name': col, 'Values': the_val}, ignore_index=True)
+
+        # Transposed description table is generated as graph object Table
+        info_tab = go.Figure(data=[go.Table(
+            header=dict(fill_color='white', line_color='black'),
+            cells=dict(values=[desc_df['Col_name'], desc_df['Values']],
+                       fill_color='white',
+                       align='left',
+                       font_size=16,
+                       line_color='black',
+                       height=25
+                       ))
+        ])
     # info_tab.layout['template']['data']['table'][0]['header']['fill']['color']='rgba(0,0,0,0)' #Not displaying header
     info_tab.update_layout(
         margin=dict(l=10, r=10, t=25, b=10), #Plotly padding reduction
@@ -212,7 +241,7 @@ def kpi_graphs(annual_df, kpi_root, sel_aim, facility, request, visibility=None)
             change = 'inf'
         else:
             change = round((end_val - start_val)/start_val * 100, 1)
-        cell_color = 'green' if float(change) > 0 else 'red'#Positive change is green and -ve is red
+        cell_color = 'green' if float(change) > 0 else 'green'#Positive change is green and -ve is red
         
         
         kpi_df = kpi_df.append({'KPI': kpi_name,
@@ -223,7 +252,7 @@ def kpi_graphs(annual_df, kpi_root, sel_aim, facility, request, visibility=None)
                                 'Change %': change,
                                 'Status': cell_color}, ignore_index=True)
     
-    # Return metrics as graph object Table, with color for hange value to indicate red or green status
+    # Return metrics as graph object Table, with color for change value to indicate red or green status
     kpi_chart = go.Figure(data=[go.Table(
         header=dict(values=list(kpi_df.columns[:-1]),
                     line_color='black',
@@ -237,7 +266,7 @@ def kpi_graphs(annual_df, kpi_root, sel_aim, facility, request, visibility=None)
                    height=30
                    ))
             ])
-   
+
     kpi_chart.update_layout(
         margin=dict(l=10, r=10, t=25, b=10), #Plotly padding reduction
         paper_bgcolor='rgba(0,0,0,0)',

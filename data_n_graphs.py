@@ -58,7 +58,11 @@ def gen_desc_content(facility):
 
     # Transposed description table is generated as graph object Table
     info_tab = go.Figure(data=[go.Table(
-        header=dict(fill_color='#ccff33', line_color='black', align='center', values=['PROJECT DETAILS', 'DESCRIPTION'],
+        header=dict(fill_color='#ccff33',
+                    line_color='black',
+                    font_family="Times New Roman, Times, serif",
+                    align='center',
+                    values=['PROJECT DETAILS', 'DESCRIPTION'],
                     ),
         cells=dict(values=[desc_df['Col_name'], desc_df['Values']],
                    fill_color='white',

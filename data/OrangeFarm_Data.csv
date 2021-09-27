@@ -1,0 +1,32 @@
+facility_name,Year,Month,IMMUNIZATION_CLIENTS_SEEN_PER_MONTH,FP_CLIENTS_SEEN_PER_MONTH,CURATIVE_CLIENTS_SEEN_PER_MONTH,ANC_CLIENTS_SEEN_PER_MONTH
+Orange Farm,2019-Jan,Jan,0,0,0,0
+Orange Farm,2019-Feb,Feb,0,0,0,0
+Orange Farm,2019-Mar,Mar,0,0,0,0
+Orange Farm,2019-Apr,Apr,0,0,0,0
+Orange Farm,2019-May,May,0,0,0,0
+Orange Farm,2019-Jun,Jun,0,0,0,0
+Orange Farm,2019-Jul,Jul,121,18,0,0
+Orange Farm,2019-Aug,Aug,82,7,0,0
+Orange Farm,2019-Sep,Sep,75,15,0,0
+Orange Farm,2019-Oct,Oct,0,0,0,0
+Orange Farm,2019-Nov,Nov,62,2,0,0
+Orange Farm,2019-Dec,Dec,37,2,0,0
+Orange Farm,2020-Jan,Jan,63,12,0,0
+Orange Farm,2020-Feb,Feb,79,11,0,0
+Orange Farm,2020-Mar,Mar,94,19,8,6
+Orange Farm,2020-Apr,Apr,72,49,2,10
+Orange Farm,2020-May,May,36,5,15,1
+Orange Farm,2020-Jun,Jun,100,13,2,3
+Orange Farm,2020-Jul,Jul,153,31,1,4
+Orange Farm,2020-Aug,Aug,150,17,1,3
+Orange Farm,2020-Sept,Sep,100,16,9,8
+Orange Farm,2020-Oct,Oct,36,1,3,0
+Orange Farm,2020-Nov,Nov,80,8,0,0
+Orange Farm,2020-Dec,Dec,39,9,0,0
+Orange Farm,2021-Jan,Jan,65,3,0,0
+Orange Farm,2021-Feb,Feb,91,6,8,1
+Orange Farm,2021-Mar,Mar,121,25,12,6
+Orange Farm,2021-Apr,Apr,157,24,65,10
+Orange Farm,2021-May,May,108,43,85,12
+Orange Farm,2021-Jun,Jun,141,38,69,18
+,,,2062,374,280,82
