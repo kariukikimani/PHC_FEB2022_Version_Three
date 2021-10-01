@@ -216,7 +216,7 @@ def kpi_graphs(annual_df, kpi_root, sel_aim, facility, request, visibility=None)
 
     facility_df = annual_df[annual_df['Facility name'] == facility]
    
-    kpi_df = pd.DataFrame(columns=['KPI','Start Year', 'End Year', 'Start Year Value', 'End Year Value', 'Change %', 'Status'])
+    kpi_df = pd.DataFrame(columns=['KPI','Start Year', 'End Year', 'Start Year Value', 'End Year Value', 'Change %','Status'])
    
     #Get KPI metric info from KPI config file
     

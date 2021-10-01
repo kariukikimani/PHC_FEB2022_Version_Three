@@ -83,13 +83,26 @@ body = html.Div([
             dcc.Location(id='url', refresh=False),
             html.MapEl([
                 html.Area(target='', alt='Aim1', title='Improved Patient Experience', href='#Aim1',
-                          coords='0,0,250,250', shape='rect'),
+                          coords='0,0,250,250', shape='rect',
+                          style={"font-weight": "bold",
+                                 "font-size": "18px",
+                                 'family': "Times New Roman,Times,serif"}),
                 html.Area(target='', alt='Aim2', title='Better Health Outcomes', href='#Aim2', coords='250,0,500,250',
-                          shape='rect'),
+                           shape='rect',
+                           style={"font-weight": "bold",
+                                  "font-size": "18px",
+                                  'family': "Times New Roman,Times,serif"}),
                 html.Area(target='', alt='Aim3', title='Lower Cost of Care', href='#Aim3', coords='250,250,500,500',
-                          shape='rect'),
+                          shape='rect',
+                          style={"font-weight": "bold",
+                                 "font-size": "18px",
+                                 'family': "Times New Roman,Times,serif"}),
                 html.Area(target='', alt='Aim4', title='Improved Staff Experience', href='#Aim4',
-                          coords='0,250,250,500', shape='rect'),
+                          coords='0,250,250,500', shape='rect',
+                          style={"font-weight": "bold",
+                                 "font-size": "18px",
+                                 'family': "Times New Roman,Times,serif"}),
+
             ], name='map'),
             html.Img(src='assets/quad_aim.png', useMap='#map'),
 
@@ -112,11 +125,11 @@ body = html.Div([
                                 value=grf.facility[0]
                             )
                             ], style={
-                    'textAlign': 'center',
-                    'margin-left': '15px',
-                    "font-size": "14px",
-                    'family': "Times New Roman, Times, serif"
-                }),
+                                        'textAlign': 'center',
+                                        'margin-left': '15px',
+                                        "font-size": "14px",
+                                        'family': "Times New Roman, Times, serif"
+                                    }),
 
                 html.Label(["",
                             html.Span("Select Analysis Graph to Display:",
@@ -129,10 +142,10 @@ body = html.Div([
                                 value=grf.graph_lst[0]
                             )
                             ], style={
-                    'textAlign': 'center',
-                    'margin-left': '15px',
-                    "font-size": "14px",
-                    'family': "Times New Roman, Times, serif"
+                                        'textAlign': 'center',
+                                        'margin-left': '15px',
+                                        "font-size": "14px",
+                                        'family': "Times New Roman, Times, serif"
                 })
                 # style={"margin-left": "15px"})
 
@@ -142,7 +155,7 @@ body = html.Div([
                 dcc.Graph(
                     id='desc_table',
                     figure=grf.desc_table,
-                    style={'width': '80%', 'height': '50%'}  #
+                    style={'width': '80%', 'height': '50p%'}  #
                 ),
 
                 dcc.Graph(

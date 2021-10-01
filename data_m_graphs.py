@@ -124,7 +124,7 @@ def gen_main_graphs(facility, sel_graph):
         yaxis_title=y_title,
         font=dict(
             family="Times New Roman, Times, serif",
-            size=18
+            size=12,
         )
     )
 
