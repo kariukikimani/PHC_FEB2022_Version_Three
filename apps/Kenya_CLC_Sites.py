@@ -17,10 +17,12 @@ colors = {
     'background': '#F0F8FF',
     'text': '#00008B'
 }
-
 layout = html.Div([
     commonmodules.get_header(),
     commonmodules.get_kenyamonth(),
+    html.Img(src='assets/kensahme.jpg',
+             style={'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'background-position': 'Center',
+                    'width': '50%'}),
 ]),
 
 

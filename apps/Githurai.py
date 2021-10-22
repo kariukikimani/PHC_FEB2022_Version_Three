@@ -102,24 +102,48 @@ card6 = dbc.Card(
 # Our dataframe
 df = pd.read_csv('data/Githurai_Data.csv')
 df1 = pd.read_csv('data/Githurai_Facility_Information_Data.csv')
-fig = px.scatter(df, x='Year', y='GOPD_CLIENTS_SEEN_PER_MONTH')
-fig.update_traces(mode='markers+lines')
+fig = px.scatter(df, x='Year', y='GOPDClientsSeenPerMonth')
+fig.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig.layout.plot_bgcolor = '#FFFFFF'
+fig.layout.paper_bgcolor = '#fff'
+fig.update_xaxes(showgrid=False)
+fig.update_yaxes(range=(0, 11000))
+#fig.update_yaxes(showgrid=False)
 
-fig1 = px.scatter(df, x='Year', y='CWC_CLIENTS_SEEN_PER_MONTH')
-fig1.update_traces(mode='markers+lines')
+fig1 = px.scatter(df, x='Year', y='CWCClientsSeenPerMonth')
+fig1.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig1.layout.plot_bgcolor = '#FFFFFF'
+fig1.layout.paper_bgcolor = '#fff'
+fig1.update_xaxes(showgrid=False)
+fig1.update_yaxes(range=(0, 1900))
 
-fig2 = px.scatter(df, x='Year', y='ANC_CLIENTS_SEEN_PER_MONTH')
-fig2.update_traces(mode='markers+lines')
+fig2 = px.scatter(df, x='Year', y='ANCClientsSeenPerMonth')
+fig2.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig2.layout.plot_bgcolor = '#FFFFFF'
+fig2.layout.paper_bgcolor = '#fff'
+fig2.update_xaxes(showgrid=False)
+fig2.update_yaxes(range=(0, 2000))
 
-fig3 = px.scatter(df, x='Year', y='PNC_CLIENTS_SEEN_PER_MONTH')
-fig3.update_traces(mode='markers+lines')
+fig3 = px.scatter(df, x='Year', y='PNCClientsSeenPerMonth')
+fig3.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig3.layout.plot_bgcolor = '#FFFFFF'
+fig3.layout.paper_bgcolor = '#fff'
+fig3.update_xaxes(showgrid=False)
+fig3.update_yaxes(range=(0, 400))
 
-fig4 = px.scatter(df, x='Year', y='FP_CLIENTS_SEEN_PER_MONTH')
-fig4.update_traces(mode='markers+lines')
+fig4 = px.scatter(df, x='Year', y='FPClientsSeenPerMonth')
+fig4.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig4.layout.plot_bgcolor = '#FFFFFF'
+fig4.layout.paper_bgcolor = '#fff'
+fig4.update_xaxes(showgrid=False)
+fig4.update_yaxes(range=(0, 500))
 
-fig5 = px.scatter(df, x='Year', y='DELIVERIES_COMPLETED_PER_MONTH')
-fig5.update_traces(mode='markers+lines')
-
+fig5 = px.scatter(df, x='Year', y='DeliveriesCompletedPerMonth')
+fig5.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig5.layout.plot_bgcolor = '#FFFFFF'
+fig5.layout.paper_bgcolor = '#fff'
+fig5.update_xaxes(showgrid=False)
+fig5.update_yaxes(range=(0, 100))
 
 layout = html.Div([
 
@@ -135,7 +159,7 @@ layout = html.Div([
         data=df1.to_dict('records'),
         style_table={'Height': 200, 'Width': 100, 'overflowX': 'auto'},
         style_header={
-            'backgroundColor': 'light-blue',
+            'backgroundColor': 'Teal',
             'fontWeight': 'bold',
             'font-family': "Times New Roman,Times,serif",
         },
@@ -171,7 +195,7 @@ layout = html.Div([
         dbc.Col([card6])
     ]),
     html.Div(
-        [html.Label(["GOPD MONTHLY PERFORMANCE"],
+        [html.Label(["GENERAL OUTPATIENT DEPARTMENT MONTHLY PERFORMANCE"],
                     style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
                            'family': "Times New Roman,Times,serif", }),
          dcc.Graph(
@@ -179,28 +203,28 @@ layout = html.Div([
              figure=fig
          ), ]),
 
-    html.Label(["CWC MONTHLY PERFORMANCE"],
+    html.Label(["CHILD WELFARE CLINIC MONTHLY PERFORMANCE"],
                style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
                       'family': "Times New Roman,Times,serif", }),
     dcc.Graph(
         id='CWC-graph',
         figure=fig1
     ),
-    html.Label(["ANC MONTHLY PERFORMANCE"],
+    html.Label(["ANTENATAL CARE CLINIC  MONTHLY PERFORMANCE"],
                style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
                       'family': "Times New Roman,Times,serif", }),
     dcc.Graph(
         id='ANC-graph',
         figure=fig2
     ),
-    html.Label(["PNC MONTHLY PERFORMANCE"],
+    html.Label(["POSTNATAL CARE CLINIC MONTHLY PERFORMANCE"],
                style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
                       'family': "Times New Roman,Times,serif", }),
     dcc.Graph(
         id='PNC-graph',
         figure=fig3
     ),
-    html.Label(["FP MONTHLY PERFORMANCE"],
+    html.Label(["FAMILY PLANNING CLINIC MONTHLY PERFORMANCE"],
                style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
                       'family': "Times New Roman,Times,serif", }),
     dcc.Graph(

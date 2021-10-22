@@ -1,4 +1,4 @@
-facility_name,Year,Month,IMMUNIZATION_CLIENTS_SEEN_PER_MONTH,FP_CLIENTS_SEEN_PER_MONTH,CURATIVE_CLIENTS_SEEN_PER_MONTH,ANC_CLIENTS_SEEN_PER_MONTH
+facility_name,Year,Month,ImmunizationClientsSeenPerMonth,FPClientsSeenPerMonth,CurativeClientsSeenPerMonth,ANCClientsSeenPerMonth
 Diepsloot,2017-Apr,Apr,391,130,0,0
 Diepsloot,2017-May,May,541,166,0,0
 Diepsloot,2017-Jun,Jun,518,211,0,0

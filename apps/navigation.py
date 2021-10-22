@@ -18,8 +18,13 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 layout = html.Div([
 
 
+
     commonmodules.get_header(),
     commonmodules.get_menu(),
+    html.Img(src='assets/Home.jpg',
+             style={'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'background-position': 'Center',
+                  'width': '50%'}),
     html.Br(),
+
 ])
 

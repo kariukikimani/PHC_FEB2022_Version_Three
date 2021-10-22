@@ -4,7 +4,6 @@ Created on Tue May 19 14:09:17 2020
 
 @author: Syamanthaka B
 """
-
 import dash
 import dash_bootstrap_components as dbc
 

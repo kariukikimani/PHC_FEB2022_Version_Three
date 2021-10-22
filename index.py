@@ -33,6 +33,7 @@ from apps import MonthlyData, home, navigation, Eboteli, Dandu, Matiku, Githurai
 
 app.title = 'PHC DASHBOARDS'
 app.layout = html.Div([
+
     dcc.Location(id='url', refresh=False),
     html.Div(id='page-content')
 ])
@@ -77,7 +78,7 @@ external_css = ["hhttps://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstr
 
 if __name__ == '__main__':
     app.run_server(debug=False, port=8050, host='0.0.0.0')
-    #waitress.serve(app.wsgifunc, port=8050, url_scheme='https')
+    #waitress.serve(app.wsgifunc, port=8050, ssl_context='adhoc',url_scheme='https')
     #serve(app, host='0.0.0.0', port=8080)
 
 

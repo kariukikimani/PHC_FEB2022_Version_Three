@@ -1,4 +1,4 @@
-facility_name,Year,Month,IMMUNIZATION_CLIENTS_SEEN_PER_MONTH,FP_CLIENTS_SEEN_PER_MONTH,CURATIVE_CLIENTS_SEEN_PER_MONTH,ANC_CLIENTS_SEEN_PER_MONTH
+facility_name,Year,Month,ImmunizationClientsSeenPerMonth,FPClientsSeenPerMonth,CurativeClientsSeenPerMonth,ANCClientsSeenPerMonth
 Orange Farm,2019-Jan,Jan,0,0,0,0
 Orange Farm,2019-Feb,Feb,0,0,0,0
 Orange Farm,2019-Mar,Mar,0,0,0,0

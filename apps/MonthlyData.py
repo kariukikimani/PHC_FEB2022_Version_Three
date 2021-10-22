@@ -20,6 +20,9 @@ colors = {
 layout = html.Div([
     commonmodules.get_header(),
     commonmodules.get_month(),
+    html.Img(src='assets/phcmonthpage.jpg',
+             style={'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'background-position': 'Center',
+                    'width': '50%'}),
 ]),
 
 

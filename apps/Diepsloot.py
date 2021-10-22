@@ -80,20 +80,33 @@ card4 = dbc.Card(
 df = pd.read_csv('data/Diepsloot_Data.csv')
 df1 = pd.read_csv('data/Diepsloot_Facility_Information_Data.csv')
 
-fig = px.scatter(df, x='Year', y='IMMUNIZATION_CLIENTS_SEEN_PER_MONTH')
-fig.update_traces(mode='markers+lines')
+fig = px.scatter(df, x='Year', y='ImmunizationClientsSeenPerMonth')
+fig.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig.layout.plot_bgcolor = '#FFFFFF'
+fig.layout.paper_bgcolor = '#fff'
+fig.update_xaxes(showgrid=False)
+fig.update_yaxes(range=(0, 1000))
 
-fig1 = px.scatter(df, x='Year', y='FP_CLIENTS_SEEN_PER_MONTH')
-fig1.update_traces(mode='markers+lines')
+fig1 = px.scatter(df, x='Year', y='FPClientsSeenPerMonth')
+fig1.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig1.layout.plot_bgcolor = '#FFFFFF'
+fig1.layout.paper_bgcolor = '#fff'
+fig1.update_xaxes(showgrid=False)
+fig1.update_yaxes(range=(0, 500))
 
-fig2 = px.scatter(df, x='Year', y='CURATIVE_CLIENTS_SEEN_PER_MONTH')
-fig2.update_traces(mode='markers+lines')
+fig2 = px.scatter(df, x='Year', y='CurativeClientsSeenPerMonth')
+fig2.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig2.layout.plot_bgcolor = '#FFFFFF'
+fig2.layout.paper_bgcolor = '#fff'
+fig2.update_xaxes(showgrid=False)
+fig2.update_yaxes(range=(0 ,200))
 
-fig3 = px.scatter(df, x='Year', y='ANC_CLIENTS_SEEN_PER_MONTH')
-fig3.update_traces(mode='markers+lines')
-
-
-
+fig3 = px.scatter(df, x='Year', y='ANCClientsSeenPerMonth')
+fig3.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
+fig3.layout.plot_bgcolor = '#FFFFFF'
+fig3.layout.paper_bgcolor = '#fff'
+fig3.update_xaxes(showgrid=False)
+fig3.update_yaxes(range=(0 , 200))
 
 layout = html.Div([
     commonmodules.get_header(),
@@ -108,7 +121,7 @@ layout = html.Div([
                             data=df1.to_dict('records'),
                             style_table={'Height': 200, 'Width': 100, 'overflowX': 'auto'},
                             style_header={
-                                'backgroundColor': 'light-blue',
+                                'backgroundColor': 'Teal',
                                 'fontWeight': 'bold',
                                 'font-family': "Times New Roman,Times,serif",
                             },
@@ -151,21 +164,21 @@ layout = html.Div([
              figure=fig
     ),]),
 
-    html.Label(["FP MONTHLY PERFORMANCE"],
+    html.Label(["FAMILY PLANNING CLINIC MONTHLY PERFORMANCE"],
                style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
                       'family': "Times New Roman,Times,serif", }),
     dcc.Graph(
         id='fp-graph',
         figure=fig1
     ),
-    html.Label(["CURATIVE MONTHLY PERFORMANCE"],
+    html.Label(["CURATIVE CARE CLINIC  MONTHLY PERFORMANCE"],
                style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
                       'family': "Times New Roman,Times,serif", }),
     dcc.Graph(
         id='Curative-graph',
         figure=fig2
     ),
-    html.Label(["ANC MONTHLY PERFORMANCE"],
+    html.Label(["ANTENATAL CARE CLINIC  MONTHLY PERFORMANCE"],
                style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
                       'family': "Times New Roman,Times,serif", }),
     dcc.Graph(
