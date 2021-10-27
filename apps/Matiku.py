@@ -154,7 +154,14 @@ layout = html.Div([
     html.H3('MATIKU MONTHLY DATA VISUALIZATION',
             style={"font-weight": "bold", "text-align": "center", "font-size": "18px",
                    'family': "Times New Roman,Times,serif", }),
-
+    html.Div(
+        [html.Label(["INDICATORS SUMMARY"],
+                    style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
+                           'family': "Times New Roman,Times,serif", }), ]),
+    dbc.Row([
+        dbc.Col([card]), dbc.Col([card1]), dbc.Col([card2]), dbc.Col([card3]), dbc.Col([card4]), dbc.Col([card5]),
+        dbc.Col([card6])
+    ]),
     html.Div([dash_table.DataTable(
 
         id='Desc',
@@ -190,14 +197,6 @@ layout = html.Div([
 
         },
     ), ]),
-    html.Div(
-        [html.Label(["INDICATORS SUMMARY"],
-                    style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
-                           'family': "Times New Roman,Times,serif", }), ]),
-    dbc.Row([
-        dbc.Col([card]), dbc.Col([card1]), dbc.Col([card2]), dbc.Col([card3]), dbc.Col([card4]), dbc.Col([card5]),
-        dbc.Col([card6])
-    ]),
     html.Div(
     [html.Label(["GENERAL OUTPATIENT DEPARTMENT MONTHLY PERFORMANCE"],
                     style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
