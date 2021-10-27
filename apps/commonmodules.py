@@ -16,7 +16,47 @@ def get_header():
         dark=True,
     )
     return navbar
+def Navbar():
+    navbar = dbc.NavbarSimple(
+        children=[
+            dbc.DropdownMenu(
+                children=[
+                    html.Div([html.A('Home', href='/', target='_blank', style={
+                        'textAlign': 'center',
+                        'margin-left': '15px',
+                        "font-size": "14px",
+                        'family': "Times New Roman, Times, serif",
+                        'hover': {
+                            'color': 'blue'},
+                        'visited': {
+                            'color': 'green'}
+                    }, )]),
 
+                    html.Div([html.A('Reports', href='/get_report', target='_blank', style={
+                        'textAlign': 'center',
+                        'margin-left': '15px',
+                        "font-size": "14px",
+                        'family': "Times New Roman, Times, serif",
+                        'hover': {
+                            'color': 'blue'},
+                        'visited': {
+                            'color': 'green'}
+                    }, )]),
+                ],
+
+                nav=True,
+                in_navbar=True,
+                label="Navigation Menu",
+            ),
+        ],
+        brand="PRIMARY HEALTHCARE DASHBOARD", style={"font-weight": "bold",
+                                                      "font-size": "18px",
+                                                      'family': "Times New Roman,Times,serif",
+                                                      },
+        color="Teal",
+        dark=True,
+    )
+    return navbar
 def yearly():
     year = dbc.NavbarSimple(
         children=[
@@ -329,7 +369,7 @@ def get_emali_menu():
         dcc.Link('Home', href='/Kenya_CLC_Sites', className="p-2 text-dark",style={"font-weight": "bold",
                                                                        "font-size": "18px",
                                                                        'family': "Times New Roman,Times,serif", },),
-        dcc.Link('Dandu Monthly Data   ', href='/Dandu', className="p-2 text-dark", style={"font-weight": "light",
+        dcc.Link('Dandu Monthly Data   ', href='/Dandu', className="p-2 text-dark", style={"font-weight": "bold",
                                                                                            "font-size": "18px",
                                                                                            'family': "Times New Roman,Times,serif", },),
         dcc.Link('Matiku Monthly Data   ', href='/Matiku', className="p-2 text-dark", style={"font-weight": "bold",

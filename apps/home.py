@@ -81,30 +81,38 @@ body = html.Div([
                                               "font-size": "20px",
                                               'family': "Times New Roman,Times,serif"}),
             dcc.Location(id='url', refresh=False),
+
+
+
+
+
+
+
+
             html.MapEl([
                 html.Area(target='', alt='Aim1', title='Improved Patient Experience', href='#Aim1',
-                          coords='0,0,250,250', shape='rect',
+                          coords='0,0,125,125', shape='rect',
                           style={"font-weight": "bold",
-                                 "font-size": "12px",
+                                 "font-size": "8px",
                                  'family': "Times New Roman,Times,serif"}),
-                html.Area(target='', alt='Aim2', title='Better Health Outcomes', href='#Aim2', coords='250,0,500,250',
+                html.Area(target='', alt='Aim2', title='Better Health Outcomes', href='#Aim2', coords='125,0,250,125',
                            shape='rect',
                            style={"font-weight": "bold",
-                                  "font-size": "12px",
+                                  "font-size": "8px",
                                   'family': "Times New Roman,Times,serif"}),
-                html.Area(target='', alt='Aim3', title='Lower Cost of Care', href='#Aim3', coords='250,250,500,500',
+                html.Area(target='', alt='Aim3', title='Lower Cost of Care', href='#Aim3', coords='125,125,250,250',
                           shape='rect',
                           style={"font-weight": "bold",
-                                 "font-size": "12px",
+                                 "font-size": "8px",
                                  'family': "Times New Roman,Times,serif"}),
                 html.Area(target='', alt='Aim4', title='Improved Staff Experience', href='#Aim4',
-                          coords='0,250,250,500', shape='rect',
+                          coords='0,125,125,250', shape='rect',
                           style={"font-weight": "bold",
-                                 "font-size": "12px",
+                                 "font-size": "8px",
                                  'family': "Times New Roman,Times,serif"}),
 
             ], name='map'),
-            html.Img(src='assets/quad_aim.png', useMap='#map'),
+            html.Img(src='assets/quad_aim4.png', useMap='#map'),
 
             html.Div(id='qa_generic', className='kpi_text')
         ], width=4),
@@ -145,7 +153,8 @@ body = html.Div([
                                         'textAlign': 'center',
                                         'margin-left': '15px',
                                         "font-size": "14px",
-                                        'family': "Times New Roman, Times, serif"
+                                        'family': "Times New Roman, Times, serif",
+
                 })
                 # style={"margin-left": "15px"})
 
@@ -155,7 +164,11 @@ body = html.Div([
                 dcc.Graph(
                     id='desc_table',
                     figure=grf.desc_table,
-                    style={'width': '80%', 'height': '50p%'}  #
+                    style={'width': '50%', 'height': '50p%',
+                           'color': 'black',
+                           'if': {'row_index': 'odd'} , 'backgroundColor': 'white',
+                           'fontWeight': 'bold'
+                           },
                 ),
 
                 dcc.Graph(
