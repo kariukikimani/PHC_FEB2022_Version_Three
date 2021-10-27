@@ -183,7 +183,7 @@ def qa_descs(sel_aim, facility):
     kpi_table = go.Figure(data=[go.Table(
         header=dict(values=['Indicator', 'Indicator description', 'Results'],
                     line_color='black',
-                    fill_color='white'),
+                    fill_color='#ccff33'),
         cells=dict(values=[facility_kpi_table['Indicator'], facility_kpi_table['Indicator description'],
                            facility_kpi_table['Results']],
                    fill_color='#ebebe0',
@@ -257,7 +257,7 @@ def kpi_graphs(sel_aim, facility, visibility):
     kpi_chart = go.Figure(data=[go.Table(
         header=dict(values=list(kpi_df.columns[:-1]),
                     line_color='black',
-                    fill_color='white'),
+                    fill_color='#ccff33'),
         cells=dict(values=[kpi_df['KPI'], kpi_df['Start Year'], kpi_df['End Year'], kpi_df['Start Year Value'],
                            kpi_df['End Year Value'], kpi_df['Change %']],
                    fill_color=['#ebebe0', '#ebebe0', '#ebebe0', '#ebebe0', '#ebebe0', kpi_df['Status']],
