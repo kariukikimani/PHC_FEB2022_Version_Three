@@ -164,7 +164,7 @@ body = html.Div([
                 dcc.Graph(
                     id='desc_table',
                     figure=grf.desc_table,
-                    style={'width': '50%', 'height': '50p%',
+                    style={'width': '70%', 'height': '50%',
                            'color': 'black',
                            'if': {'row_index': 'odd'} , 'backgroundColor': 'white',
                            'fontWeight': 'bold'

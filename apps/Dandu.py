@@ -29,8 +29,8 @@ card = dbc.Card(
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
 
-            html.H2("72,005", id="card-value",style={"font-weight": "bold", "text-align": "center", "font-size": "14px",
-                           'family': "Times New Roman,Times,serif", "color": "blue", }),
+            html.H2("72,005", id="card-value",style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
+                                                     'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ],
     )
 )
@@ -40,8 +40,9 @@ card1 = dbc.Card(
             html.H4("CWC TOTAL SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("11,697", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "14px",
-                                                      'family': "Times New Roman,Times,serif", "color": "blue",}),
+
+            html.H2("11,697", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+                                                      'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
 )
@@ -51,8 +52,8 @@ card2 = dbc.Card(
             html.H4("ANC TOTAL SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("5,341", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "14px",
-                                                   'family': "Times New Roman,Times,serif","color": "blue", }),
+            html.H2("5,341", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+                                                   'family': "Times New Roman,Times,serif","color": "#23282D", }),
         ]
     )
 )
@@ -62,19 +63,19 @@ card3 = dbc.Card(
             html.H4("PNC TOTAL SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("1,707", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "14px",
-                                                     'family': "Times New Roman,Times,serif", "color": "blue", }),
+            html.H2("1,707", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
+                                                     'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
 )
 card4 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("FP TOTAL SINCE LAUNCH", id="card-title",
+            html.H4("TOTAL FP PATIENTS SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("3,916", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "14px",
-                                                     'family': "Times New Roman,Times,serif" , "color": "blue", }),
+            html.H2("3,916", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+                                                     'family': "Times New Roman,Times,serif" , "color": "#23282D", }),
         ]
     )
 )
@@ -84,8 +85,8 @@ card5 = dbc.Card(
             html.H4("TOTAL DELIVERIES SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("2,340", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "14px",
-                                                     'family': "Times New Roman,Times,serif", "color": "blue", }),
+            html.H2("2,340", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
+                                                     'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
 )
@@ -96,8 +97,8 @@ card6 = dbc.Card(
             html.H4("NUMBER OF LIVES IMPROVED", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("0", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "14px",
-                                                   'family': "Times New Roman,Times,serif","color": "blue", }),
+            html.H2("0", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+                                                   'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
 )
@@ -111,6 +112,8 @@ fig.layout.plot_bgcolor = '#FFFFFF'
 fig.layout.paper_bgcolor = '#fff'
 fig.update_xaxes(showgrid=False)
 fig.update_yaxes(range=(0, 2500))
+fig.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 
 fig1 = px.scatter(df, x='Year', y='CWCClientsSeenPerMonth')
 fig1.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -118,6 +121,8 @@ fig1.layout.plot_bgcolor = '#FFFFFF'
 fig1.layout.paper_bgcolor = '#fff'
 fig1.update_xaxes(showgrid=False)
 fig1.update_yaxes(range=(0, 600))
+fig1.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig1.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 
 fig2 = px.scatter(df, x='Year', y='ANCClientsSeenPerMonth')
 fig2.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -125,6 +130,8 @@ fig2.layout.plot_bgcolor = '#FFFFFF'
 fig2.layout.paper_bgcolor = '#fff'
 fig2.update_xaxes(showgrid=False)
 fig2.update_yaxes(range=(0, 200))
+fig2.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig2.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 
 fig3 = px.scatter(df, x='Year', y='PNCClientsSeenPerMonth')
 fig3.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -132,6 +139,8 @@ fig3.layout.plot_bgcolor = '#FFFFFF'
 fig3.layout.paper_bgcolor = '#fff'
 fig3.update_xaxes(showgrid=False)
 fig3.update_yaxes(range=(0 , 100))
+fig3.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig3.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 
 fig4 = px.scatter(df, x='Year', y='FPClientsSeenPerMonth')
 fig4.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -139,6 +148,8 @@ fig4.layout.plot_bgcolor = '#FFFFFF'
 fig4.layout.paper_bgcolor = '#fff'
 fig4.update_xaxes(showgrid=False)
 fig4.update_yaxes(range=(0 , 300))
+fig4.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig4.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 
 fig5 = px.scatter(df, x='Year', y='DeliveriesCompletedPerMonth')
 fig5.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -146,7 +157,8 @@ fig5.layout.plot_bgcolor = '#FFFFFF'
 fig5.layout.paper_bgcolor = '#fff'
 fig5.update_xaxes(showgrid=False)
 fig5.update_yaxes(range=(0, 100))
-
+fig5.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig5.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 layout = html.Div([
     commonmodules.get_header(),
     commonmodules.get_dandu_menu(),
