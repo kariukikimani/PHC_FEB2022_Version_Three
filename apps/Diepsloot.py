@@ -23,7 +23,7 @@ colors = {
 card = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("TOTAL IMMUNIZATION PATIENTS SINCE LAUNCH", id="card-title",
+            html.H4("IMMUNIZATIONS DONE SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("28,756", id="card-value",
@@ -35,18 +35,18 @@ card = dbc.Card(
 card1 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("TOTAL FP PATIENTS SINCE LAUNCH", id="card-title",
+            html.H4("FP PATIENTS SEEN SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("5,830", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
-                                                   'family': "Times New Roman,Times,serif", "color": "#23282D",}),
+                                                     'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
 )
 card2 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("TOTAL CURATIVE PATIENTS SINCE LAUNCH", id="card-title",
+            html.H4("CURATIVE PATIENTS SEEN SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("1,116", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
@@ -57,7 +57,7 @@ card2 = dbc.Card(
 card3 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("TOTAL ANC PATIENTS SINCE LAUNCH", id="card-title",
+            html.H4("ANC PATIENTS SEEN SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("1,879", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",

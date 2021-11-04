@@ -23,7 +23,7 @@ colors = {
 card = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("IMMUNIZATION TOTAL SINCE LAUNCH", id="card-title",
+            html.H4("IMMUNIZATIONS DONE SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("2062", id="card-value",
@@ -35,7 +35,7 @@ card = dbc.Card(
 card1 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("TOTAL FP PATIENTS SINCE LAUNCH", id="card-title",
+            html.H4("FP PATIENTS SEEN SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("374", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
@@ -46,7 +46,7 @@ card1 = dbc.Card(
 card2 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("TOTAL CURATIVE PATIENTS SINCE LAUNCH", id="card-title",
+            html.H4("CURATIVE PATIENTS SEEN SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("280", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
@@ -57,7 +57,7 @@ card2 = dbc.Card(
 card3 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("ANC TOTAL SINCE LAUNCH", id="card-title",
+            html.H4("ANC PATIENTS SEEN SINCE LAUNCH", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("82", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
