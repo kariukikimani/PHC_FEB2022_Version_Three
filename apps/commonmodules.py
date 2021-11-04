@@ -21,7 +21,6 @@ def Navbar():
         children=[
             dbc.DropdownMenu(
                 children=[
-
                     html.Div([html.A('Home', href='/', target='_blank', style={
                         'textAlign': 'center',
                         'margin-left': '15px',

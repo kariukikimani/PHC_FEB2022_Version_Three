@@ -26,7 +26,7 @@ card = dbc.Card(
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("25,676", id="card-value",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "14px",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
                            'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
