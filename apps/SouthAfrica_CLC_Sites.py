@@ -21,9 +21,6 @@ colors = {
 layout = html.Div([
     commonmodules.get_header(),
     commonmodules.get_SA_Month(),
-    html.Img(src='assets/kensahme.jpg',
-             style={'display': 'block', 'margin-left': 'auto', 'margin-right': 'auto', 'background-position': 'Center',
-                    'width': '50%'}),
 ]),
 
 

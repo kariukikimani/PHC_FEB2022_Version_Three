@@ -2,5 +2,7 @@
 __pycache__
 .spyproject
 scripts/__pycache__
-scripts/typography.css
-CPCSDASH
+venv
+*.pyc
+.DS_Store
+.env

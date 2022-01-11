@@ -1,3 +1,5 @@
+import pathlib
+
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table
@@ -24,7 +26,7 @@ card = dbc.Card(
     dbc.CardBody(
         [
             html.H4("IMMUNIZATIONS DONE SINCE LAUNCH", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("2062", id="card-value",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
@@ -36,10 +38,10 @@ card1 = dbc.Card(
     dbc.CardBody(
         [
             html.H4("FP PATIENTS SEEN SINCE LAUNCH", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("374", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
-                                                   'family': "Times New Roman,Times,serif", "color": "#23282D",}),
+                                                   'family': "Times New Roman,Times,serif", "color": "#23282D"}),
         ]
     )
 )
@@ -47,10 +49,10 @@ card2 = dbc.Card(
     dbc.CardBody(
         [
             html.H4("CURATIVE PATIENTS SEEN SINCE LAUNCH", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("280", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
-                                                   'family': "Times New Roman,Times,serif","color": "#23282D" }),
+                                                   'family': "Times New Roman,Times,serif","color": "#23282D"}),
         ]
     )
 )
@@ -58,7 +60,7 @@ card3 = dbc.Card(
     dbc.CardBody(
         [
             html.H4("ANC PATIENTS SEEN SINCE LAUNCH", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("82", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
                                                      'family': "Times New Roman,Times,serif", "color": "#23282D", }),
@@ -69,18 +71,30 @@ card4 = dbc.Card(
     dbc.CardBody(
         [
             html.H4("NUMBER OF LIVES IMPROVED", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("0", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+            html.H4("(Total No.of Visits Since Launch)", id="card-title",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
+                           'family': "Times New Roman,Times,serif", "color": "#23282D", }),
+            html.H2("2798", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                    'family': "Times New Roman,Times,serif","color": "#23282D", }),
         ]
     )
 )
 # Our dataframe
-df = pd.read_csv('data/OrangeFarm_Data.csv')
-df1 = pd.read_csv('data/OrangeFarm_Facility_Information_Data.csv')
+# Get Relative Data Folder
+PATH = pathlib.Path(__file__) .parent
+DATA_PATH = PATH.joinpath("../data").resolve()
+df = pd.read_csv(DATA_PATH.joinpath("OrangeFarm_Data.csv"))
+df1 = pd.read_csv(DATA_PATH.joinpath("OrangeFarm_Facility_Information_Data.csv"))
 
 fig = px.scatter(df, x='Year', y='ImmunizationClientsSeenPerMonth')
+fig.update_layout(title="IMMUNIZATION MONTHLY PERFORMANCE FOR ORANGEFARM",
+                  font=dict(
+                      family="Times New Roman,Times,serif",
+                      size=15,
+                      color="#231F20",
+                  ))
 fig.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
 fig.layout.plot_bgcolor = '#FFFFFF'
 fig.layout.paper_bgcolor = '#fff'
@@ -88,8 +102,21 @@ fig.update_xaxes(showgrid=False)
 fig.update_yaxes(range=(0, 200))
 fig.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 fig.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig.update_yaxes(
+      title='Immunization Clients Seen Per Month',
+      zeroline=True,
+      showline=True,
+      showticklabels=True,
+      gridwidth=1
+   ),
 
 fig1 = px.scatter(df, x='Year', y='FPClientsSeenPerMonth')
+fig1.update_layout(title="FAMILY PLANNING CLINIC MONTHLY PERFORMANCE FOR ORANGEFARM",
+                   font=dict(
+                       family="Times New Roman,Times,serif",
+                       size=15,
+                       color="#231F20",
+                   ))
 fig1.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
 fig1.layout.plot_bgcolor = '#FFFFFF'
 fig1.layout.paper_bgcolor = '#fff'
@@ -97,8 +124,21 @@ fig1.update_xaxes(showgrid=False)
 fig1.update_yaxes(range=(0, 70))
 fig1.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 fig1.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig1.update_yaxes(
+      title='FP Clients Seen Per Month',
+      zeroline=True,
+      showline=True,
+      showticklabels=True,
+      gridwidth=1
+   ),
 
 fig2 = px.scatter(df, x='Year', y='CurativeClientsSeenPerMonth')
+fig2.update_layout(title="CURATIVE CARE CLINIC  MONTHLY PERFORMANCE FOR ORANGEFARM",
+                   font=dict(
+                       family="Times New Roman,Times,serif",
+                       size=15,
+                       color="#231F20",
+                   ))
 fig2.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
 fig2.layout.plot_bgcolor = '#FFFFFF'
 fig2.layout.paper_bgcolor = '#fff'
@@ -106,8 +146,21 @@ fig2.update_xaxes(showgrid=False)
 fig2.update_yaxes(range=(0, 100))
 fig2.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 fig2.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig2.update_yaxes(
+      title='Curative Clients Seen Per Month',
+      zeroline=True,
+      showline=True,
+      showticklabels=True,
+      gridwidth=1
+   ),
 
 fig3 = px.scatter(df, x='Year', y='ANCClientsSeenPerMonth')
+fig3.update_layout(title="ANTENATAL CARE CLINIC  MONTHLY PERFORMANCE FOR ORANGEFARM",
+                   font=dict(
+                       family="Times New Roman,Times,serif",
+                       size=15,
+                       color="#231F20",
+                   ))
 fig3.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
 fig3.layout.plot_bgcolor = '#FFFFFF'
 fig3.layout.paper_bgcolor = '#fff'
@@ -115,6 +168,13 @@ fig3.update_xaxes(showgrid=False)
 fig3.update_yaxes(range=(0, 30))
 fig3.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 fig3.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
+fig3.update_yaxes(
+      title='ANC Clients Seen Per Month',
+      zeroline=True,
+      showline=True,
+      showticklabels=True,
+      gridwidth=1
+   ),
 
 layout = html.Div([
     commonmodules.get_header(),
@@ -122,13 +182,6 @@ layout = html.Div([
     html.H3('ORANGEFARM MONTHLY DATA VISUALIZATION',
             style={"font-weight": "bold", "text-align": "center", "font-size": "18px",
                    'family': "Times New Roman,Times,serif", }),
-    html.Div(
-        [html.Label(["INDICATORS SUMMARY"],
-                    style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
-                           'family': "Times New Roman,Times,serif", }), ]),
-    dbc.Row([
-        dbc.Col([card]), dbc.Col([card1]), dbc.Col([card2]), dbc.Col([card3]), dbc.Col([card4])
-    ]),
     html.Div([dash_table.DataTable(
 
                             id='Desc',
@@ -163,32 +216,36 @@ layout = html.Div([
 
                                     },
                         ),]),
-    html.Div(
-        [html.Label(["IMMUNIZATION MONTHLY PERFORMANCE"],
-                    style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
-                           'family': "Times New Roman,Times,serif", }),
-             dcc.Graph(
-             id='Immunization-graph',
-             figure=fig
-    ),]),
 
-    html.Label(["FAMILY PLANNING CLINIC MONTHLY PERFORMANCE"],
-               style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
-                      'family': "Times New Roman,Times,serif", }),
+    html.Div(
+        [html.Label(["INDICATORS SUMMARY"],
+                    style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
+                           'family': "Times New Roman,Times,serif", }), ]),
+    dbc.Row([
+        dbc.Col([card]), dbc.Col([card1]), dbc.Col([card2]), dbc.Col([card3]), dbc.Col([card4])
+    ]),
+
+    ##Differntiating Tab between indicator summary and the graphs.
+    commonmodules.get_diff_menu(),
+
+    html.Div(
+        [html.Label(),
+         dcc.Graph(
+         id='Immunization-graph',
+         figure=fig
+                  ),]),
+
+    html.Label(),
     dcc.Graph(
         id='fp-graph',
         figure=fig1
     ),
-    html.Label(["CURATIVE CARE CLINIC MONTHLY PERFORMANCE"],
-               style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
-                      'family': "Times New Roman,Times,serif", }),
+    html.Label(),
     dcc.Graph(
         id='Curative-graph',
         figure=fig2
     ),
-    html.Label(["ANTENATAL CARE CLINIC  MONTHLY PERFORMANCE"],
-               style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
-                      'family': "Times New Roman,Times,serif", }),
+    html.Label(),
     dcc.Graph(
         id='ANC-graph',
         figure=fig3

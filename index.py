@@ -29,7 +29,7 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 from app import app
-from apps import MonthlyData, home, navigation, Eboteli, Dandu, Matiku, Githurai, Tutini, Emali, Kenya_CLC_Sites, SouthAfrica_CLC_Sites,Diepsloot,OrangeFarm
+from apps import MonthlyData, home, navigation, Eboteli, Dandu, Matiku, Githurai, Tutini, Emali, Kenya_CLC_Sites, SouthAfrica_CLC_Sites,Diepsloot,OrangeFarm,YearlyData
 
 app.title = 'PHC DASHBOARDS'
 app.layout = html.Div([
@@ -68,17 +68,19 @@ def display_page(pathname):
         return Diepsloot.layout
     elif pathname == '/OrangeFarm':
         return OrangeFarm.layout
+    elif pathname == '/YearlyData':
+        return YearlyData.layout
     else:
         return '404'
 
-external_css = ["hhttps://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
+external_css = ["https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css",
                 "//fonts.googleapis.com/css?family=Raleway:400,300,600",
                 "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"]
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False, port=8050, host='0.0.0.0')
-    #waitress.serve(app.wsgifunc, port=8050, ssl_context='adhoc',url_scheme='https')
+    #app.run_server(debug=False, port=8050, host='0.0.0.0')
+    waitress.serve(app.server, port=8050)
     #serve(app, host='0.0.0.0', port=8080)
 
 

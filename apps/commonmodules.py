@@ -92,6 +92,13 @@ def yearly():
 def get_menu():
     menu = html.Div([
         dbc.Button('Monthly Data', href='/MonthlyData', color="light", className="me-1", style={"font-size": "18px"}, ),
+        dbc.Button('Yearly Data', href='/YearlyData', color="light", className="me-1",style={"font-size": "18px"}, ),
+    ], className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm")
+    return menu
+
+def get_yearmenu():
+    menu = html.Div([
+       #dbc.Button("Home", href='/', color="light", className="me-1", style={"font-size": "18px"}, ),
         dbc.Button('Yearly Data', href='/home', color="light", className="me-1",style={"font-size": "18px"}, ),
     ], className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm")
     return menu
@@ -202,6 +209,11 @@ def get_congo():
            ], className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm")
     return menu
 
+def get_diff_menu():
+    menu = html.Div([
+        dbc.Button(color="light", className="me-1" ),
+    ], className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm")
+    return menu
 def navbar_monthly():
  navbar_sales = html.Div([
 
