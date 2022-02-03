@@ -22,10 +22,11 @@ layout = html.Div([
     commonmodules.get_month(),
 # adding a header and a paragraph
     html.Div([
-                    dbc.Button("A healthcare dashboard is a modern analytics tool to monitor healthcare KPIs in a "
-                               "dynamic and interactive way.A common example is a hospital KPI dashboard, "
-                               "that enables healthcare professionals to access important patient statistics "
-                               "in real-time to increase the overall hospital performance and patient satisfaction.",
+                    dbc.Button("This section on the primary healthcare dashboard provides a monthly summary of the "
+                               "performance of various indicators as per agreed terms for the various CLCs "
+                               "under the CPCS venture.It contains a description of the facility, "
+                               "summed values of the indicator numbers and line graphs for each indicator which depict "
+                               "the change in performance of the specific indicators since it began being tracked",
                                outline=True, color="secondary"),
                                 ],
                             style={'padding':'50px',

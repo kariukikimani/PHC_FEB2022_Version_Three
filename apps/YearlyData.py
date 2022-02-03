@@ -22,10 +22,15 @@ layout = html.Div([
     commonmodules.get_yearmenu(),
 # adding a header and a paragraph
     html.Div([
-                    dbc.Button("A healthcare dashboard is a modern analytics tool to monitor healthcare KPIs in a "
-                               "dynamic and interactive way.A common example is a hospital KPI dashboard, "
-                               "that enables healthcare professionals to access important patient statistics "
-                               "in real-time to increase the overall hospital performance and patient satisfaction.",
+                    dbc.Button("This section on the primary healthcare dashboard provides the yearly summary of the "
+                               "performance of various indicators as per agreed terms for the various CLCs under the CPCS venture."
+                               "It contains a description of the facility and the details of the project inception,"
+                               "A circular custom select menu with labels of the various quadruple aims in each quadrangle,"
+                               "two drop down lists for facility selection and graph selection as well as an Indicator performance "
+                               "explanation table which updates on selection of a specific quadruple aim and shows the "
+                               "indicator numbers from when the indicator began to be tracked, to the present year and "
+                               "the percentage change.Lastly one is able to download a report of the yearly data which contains description information for each "
+                               "of the clc sites as well as the indicator performance and explanation.Which can be saved as a html file or pdf.",
                                outline=True, color="secondary"),
                                 ],
                             style={'padding':'50px',

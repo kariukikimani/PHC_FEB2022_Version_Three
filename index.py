@@ -31,7 +31,7 @@ from dash.dependencies import Input, Output
 from app import app
 from apps import MonthlyData, home, navigation, Eboteli, Dandu, Matiku, Githurai, Tutini, Emali, Kenya_CLC_Sites, SouthAfrica_CLC_Sites,Diepsloot,OrangeFarm,YearlyData
 
-app.title = 'PHC DASHBOARDS'
+app.title = 'PHC DASHBOARD'
 app.layout = html.Div([
 
     dcc.Location(id='url', refresh=False),
