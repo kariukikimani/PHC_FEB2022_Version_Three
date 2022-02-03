@@ -23,7 +23,7 @@ colors = {
 card = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("GOPD PATIENTS SEEN SINCE LAUNCH", id="card-title",
+            html.H4("GOPD PATIENTS SEEN SINCE JAN-2018", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("20,762", id="card-value",
@@ -35,8 +35,8 @@ card = dbc.Card(
 card1 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("CWC PATIENTS SEEN SINCE LAUNCH", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
+            html.H4("CWC PATIENTS SEEN SINCE JAN-2018", id="card-title",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("3,037", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                    'family': "Times New Roman,Times,serif", "color": "#23282D",}),
@@ -46,8 +46,8 @@ card1 = dbc.Card(
 card2 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("ANC PATIENTS SEEN SINCE LAUNCH", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
+            html.H4("ANC PATIENTS SEEN SINCE JAN-2018", id="card-title",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("578", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                    'family': "Times New Roman,Times,serif","color": "#23282D", }),
@@ -57,33 +57,33 @@ card2 = dbc.Card(
 card3 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("PNC PATIENTS SEEN SINCE LAUNCH", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
+            html.H4("PNC PATIENTS SEEN SINCE JAN-2018", id="card-title",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("104", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
-                                                     'family': "Times New Roman,Times,serif", "color": "#23282D", }),
+                                                   'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
 )
 card4 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("FP PATIENTS SEEN SINCE LAUNCH", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
+            html.H4("FP PATIENTS SEEN SINCE JAN-2018", id="card-title",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("893", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
-                                                     'family': "Times New Roman,Times,serif" , "color": "#23282D", }),
+                                                   'family': "Times New Roman,Times,serif" , "color": "#23282D", }),
         ]
     )
 )
 card5 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("DELIVERIES DONE SINCE LAUNCH", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
+            html.H4("DELIVERIES DONE SINCE JAN-2018", id="card-title",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
             html.H2("24", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
-                                                     'family': "Times New Roman,Times,serif", "color": "#23282D", }),
+                                                  'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
 )
@@ -91,14 +91,11 @@ card5 = dbc.Card(
 card6 = dbc.Card(
     dbc.CardBody(
         [
-            html.H4("NUMBER OF LIVES IMPROVED", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
+            html.H4("LIVES IMPROVED SINCE JAN-2018", id="card-title",
+                    style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H4("(Total No.of Visits Since Launch)", id="card-title",
-                    style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
-                           'family': "Times New Roman,Times,serif", "color": "#23282D", }),
-            html.H2("25,398", id="card-value", style={"font-weight": "bold" , "text-align": "center", "font-size": "25px",
-                                                   'family': "Times New Roman,Times,serif","color": "#23282D", }),
+            html.H2("25,398", id="card-value", style={"font-weight": "bold" , "text-align": "center", "font-size":"25px",
+                                                      'family': "Times New Roman,Times,serif","color": "#23282D", }),
         ]
     )
 )
@@ -263,7 +260,7 @@ layout = html.Div([
             'font-family': "Times New Roman,Times,serif",
         },
         style_cell={'textAlign': 'Center', 'overflow': 'hidden',
-                    'fontSize': 12,
+                    'fontSize': 14,
                     'textOverflow': 'ellipsis',
                     # all three widths are needed
                     'minWidth': '180px', 'width': '180px', 'maxWidth': '180px',
@@ -279,25 +276,30 @@ layout = html.Div([
             'whiteSpace': 'normal',
             'height': 'auto',
             'lineHeight': '15px',
-            'fontSize': 12,
+            'fontSize': 14,
             'textOverflow': 'ellipsis',
             'padding': '5px',
             'font-family': "Times New Roman,Times,serif",
 
         },
     ), ]),
-html.Div(
-        [html.Label(["INDICATORS SUMMARY"],
-                    style={"font-weight": "bold", "text-align": "left", "font-size": "12px",
-                           'family': "Times New Roman,Times,serif", }), ]),
+    html.Div(
+        dbc.Card('Indicator Summary', color="White", className="me-1",
+                 style={"font-size": "18px",
+                        'font-family': "Times New Roman,Times,serif"}, ), ),
     dbc.Row([
         dbc.Col([card]), dbc.Col([card1]), dbc.Col([card2]), dbc.Col([card3]), dbc.Col([card4]), dbc.Col([card5]),
         dbc.Col([card6])
     ]),
 
     ##Differntiating Tab between indicator summary and the graphs.
-    commonmodules.get_diff_menu(),
+    #commonmodules.get_diff_menu(),
 
+    html.Div(
+        dbc.Card('', color="White", className="me-1",
+                 style={"font-size": "18px"}, ), ),
+
+    #Graph Display Section
     html.Div(
     [html.Label(),
     dcc.Graph(
