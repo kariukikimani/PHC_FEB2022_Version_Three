@@ -28,7 +28,7 @@ card = dbc.Card(
             html.H4("IMMUNIZATIONS DONE SINCE APR-2017", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("28,756", id="card-value",
+            html.H2("33,588", id="card-value",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
                            'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
@@ -40,7 +40,7 @@ card1 = dbc.Card(
             html.H4("FP PATIENTS SEEN SINCE APR-2017", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("5,830", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+            html.H2("6,070", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                      'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
@@ -51,7 +51,7 @@ card2 = dbc.Card(
             html.H4("CURATIVE PATIENTS SEEN SINCE APR-2017", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("1,116", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+            html.H2("2,269", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                      'family': "Times New Roman,Times,serif","color": "#23282D", }),
         ]
     )
@@ -62,7 +62,7 @@ card3 = dbc.Card(
             html.H4("ANC PATIENTS SEEN SINCE APR-2017", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("1,879", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
+            html.H2("2,617", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
                                                      'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
@@ -73,7 +73,7 @@ card4 = dbc.Card(
             html.H4("LIVES IMPROVED SINCE APR-2017", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("37,581", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+            html.H2("44,544", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                       'family': "Times New Roman,Times,serif","color": "#23282D", }),
         ]
     )
@@ -89,7 +89,7 @@ fig = px.scatter(df, x='Year', y='ImmunizationClientsSeenPerMonth')
 fig.update_layout(title="IMMUNIZATION MONTHLY PERFORMANCE FOR DIEPSLOOT",
                   font=dict(
                       family="Times New Roman,Times,serif",
-                      size=15,
+                      size=13,
                       color="#231F20",
                   ))
 fig.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -112,7 +112,7 @@ fig1 = px.scatter(df, x='Year', y='FPClientsSeenPerMonth')
 fig1.update_layout(title="FAMILY PLANNING CLINIC MONTHLY PERFORMANCE FOR DIEPSLOOT",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig1.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -134,14 +134,14 @@ fig2 = px.scatter(df, x='Year', y='CurativeClientsSeenPerMonth')
 fig2.update_layout(title="CURATIVE CARE CLINIC  MONTHLY PERFORMANCE FOR DIEPSLOOT",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig2.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
 fig2.layout.plot_bgcolor = '#FFFFFF'
 fig2.layout.paper_bgcolor = '#fff'
 fig2.update_xaxes(showgrid=False)
-fig2.update_yaxes(range=(0 ,200))
+fig2.update_yaxes(range=(0 ,300))
 fig2.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 fig2.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 fig2.update_yaxes(
@@ -156,14 +156,14 @@ fig3 = px.scatter(df, x='Year', y='ANCClientsSeenPerMonth')
 fig3.update_layout(title="ANTENATAL CARE CLINIC  MONTHLY PERFORMANCE FOR DIEPSLOOT",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig3.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
 fig3.layout.plot_bgcolor = '#FFFFFF'
 fig3.layout.paper_bgcolor = '#fff'
 fig3.update_xaxes(showgrid=False)
-fig3.update_yaxes(range=(0 , 200))
+fig3.update_yaxes(range=(0, 200))
 fig3.update_xaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 fig3.update_yaxes(showline=True, linewidth=1, linecolor='rgb(0, 106, 76)')
 fig3.update_yaxes(

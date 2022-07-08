@@ -111,7 +111,7 @@ fig = px.scatter(df, x='Year', y='GOPDClientsSeenPerMonth')
 fig.update_layout(title="GENERAL OUTPATIENT DEPARTMENT MONTHLY PERFORMANCE FOR MATIKU",
                   font=dict(
                       family="Times New Roman,Times,serif",
-                      size=15,
+                      size=13,
                       color="#231F20",
                   )),
 fig.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -133,7 +133,7 @@ fig1 = px.scatter(df, x='Year', y='CWCClientsSeenPerMonth')
 fig1.update_layout(title="CHILD WELFARE CLINIC MONTHLY PERFORMANCE FOR MATIKU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig1.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -156,7 +156,7 @@ fig2 = px.scatter(df, x='Year', y='ANCClientsSeenPerMonth')
 fig2.update_layout(title="ANTENATAL CARE CLINIC  MONTHLY PERFORMANCE FOR MATIKU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig2.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -178,7 +178,7 @@ fig3 = px.scatter(df, x='Year', y='PNCClientsSeenPerMonth')
 fig3.update_layout(title="POSTNATAL CARE CLINIC  MONTHLY PERFORMANCE FOR MATIKU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig3.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -200,7 +200,7 @@ fig4 = px.scatter(df, x='Year', y='FPClientsSeenPerMonth')
 fig4.update_layout(title="FAMILY PLANNING CLINIC  MONTHLY PERFORMANCE FOR MATIKU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig4.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -222,7 +222,7 @@ fig5 = px.scatter(df, x='Year', y='DeliveriesCompletedPerMonth')
 fig5.update_layout(title="DELIVERIES MONTHLY PERFORMANCE FOR MATIKU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig5.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')

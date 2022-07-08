@@ -28,7 +28,7 @@ card = dbc.Card(
             html.H4("IMMUNIZATIONS DONE SINCE JAN-2019", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("2062", id="card-value",
+            html.H2("3692", id="card-value",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
                            'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
@@ -40,8 +40,11 @@ card1 = dbc.Card(
             html.H4("FP PATIENTS SEEN SINCE JAN-2019", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("374", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+
+
+            html.H2("808", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                    'family': "Times New Roman,Times,serif", "color": "#23282D"}),
+
         ]
     )
 )
@@ -51,7 +54,7 @@ card2 = dbc.Card(
             html.H4("CURATIVE PATIENTS SEEN SINCE JAN-2019", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("280", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+            html.H2("1026", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                    'family': "Times New Roman,Times,serif","color": "#23282D"}),
         ]
     )
@@ -62,8 +65,8 @@ card3 = dbc.Card(
             html.H4("ANC PATIENTS SEEN SINCE JAN-2019", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("82", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
-                                                  'family': "Times New Roman,Times,serif", "color": "#23282D", }),
+            html.H2("152", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+                                                   'family': "Times New Roman,Times,serif","color": "#23282D"}),
         ]
     )
 )
@@ -73,11 +76,15 @@ card4 = dbc.Card(
             html.H4("LIVES IMPROVED SINCE JAN-2019", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("2798", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
-                                                    'family': "Times New Roman,Times,serif","color": "#23282D", }),
+            html.H2("5678", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+                                                   'family': "Times New Roman,Times,serif","color": "#23282D"}),
         ]
     )
 )
+PATH = pathlib.Path(__file__) .parent
+DATA_PATH = PATH.joinpath("../data").resolve()
+df2 = pd.read_csv(DATA_PATH.joinpath("Orangefarm_Card.csv"))
+
 # Our dataframe
 # Get Relative Data Folder
 PATH = pathlib.Path(__file__) .parent
@@ -89,7 +96,7 @@ fig = px.scatter(df, x='Year', y='ImmunizationClientsSeenPerMonth')
 fig.update_layout(title="IMMUNIZATION MONTHLY PERFORMANCE FOR ORANGEFARM",
                   font=dict(
                       family="Times New Roman,Times,serif",
-                      size=15,
+                      size=13,
                       color="#231F20",
                   ))
 fig.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -111,7 +118,7 @@ fig1 = px.scatter(df, x='Year', y='FPClientsSeenPerMonth')
 fig1.update_layout(title="FAMILY PLANNING CLINIC MONTHLY PERFORMANCE FOR ORANGEFARM",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig1.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -133,7 +140,7 @@ fig2 = px.scatter(df, x='Year', y='CurativeClientsSeenPerMonth')
 fig2.update_layout(title="CURATIVE CARE CLINIC  MONTHLY PERFORMANCE FOR ORANGEFARM",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig2.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -155,7 +162,7 @@ fig3 = px.scatter(df, x='Year', y='ANCClientsSeenPerMonth')
 fig3.update_layout(title="ANTENATAL CARE CLINIC  MONTHLY PERFORMANCE FOR ORANGEFARM",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig3.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -218,6 +225,8 @@ layout = html.Div([
         dbc.Card('Indicator Summary', color="White", className="me-1",
                  style={"font-size": "18px",
                         'font-family': "Times New Roman,Times,serif"}, ), ),
+
+
     dbc.Row([
         dbc.Col([card]), dbc.Col([card1]), dbc.Col([card2]), dbc.Col([card3]), dbc.Col([card4])
     ]),

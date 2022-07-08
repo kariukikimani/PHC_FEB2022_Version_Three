@@ -81,7 +81,7 @@ external_css = ["https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstra
 if __name__ == '__main__':
     #app.run_server(debug=False, port=8050, host='0.0.0.0')
     waitress.serve(app.server, port=8050)
-    #serve(app, host='0.0.0.0', port=8080)
+    #serve(app.server, host='0.0.0.0', port=8050)
 
 
 

@@ -114,8 +114,8 @@ body = html.Div([
             ], name='map'),
             html.Img(src='assets/quad_aim4.png', useMap='#map'),
 
-            html.Div(id='qa_generic', className='kpi_text')
-        ], width=4),
+            html.Div(id='qa_generic', className='kpi_text'),
+        ], width=4,),
 
         ### Main column of graphs from annual_data
         dbc.Col([
@@ -177,7 +177,7 @@ body = html.Div([
                     style={'width': '94%', 'height': '30%'}  #
                 ),
 
-            ]),
+            ],),
 
             dbc.Row([
                 ### Quadruple aim

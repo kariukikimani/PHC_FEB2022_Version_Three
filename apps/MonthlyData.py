@@ -31,12 +31,13 @@ layout = html.Div([
                                 ],
                             style={'padding':'50px',
                                    'display': 'block',
-                                   'size': "md",
+                                   'size': "15",
                                    'outline': 'True',
                                    'margin-left': 'auto',
                                    'margin-right': 'auto',
                                    'background-position': 'Center',
-                                   "font-size": "24px"
+                                   "font-size": "24px",
+                                   'fontWeight':'bold'
                                     }),
 
 ],)

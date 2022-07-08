@@ -30,7 +30,7 @@ card = dbc.Card(
                     style={"font-weight": "bold", "text-align": "center", "font-size": "10px",
                            'family': "Times New Roman,Times,serif", }),
 
-            html.H2("77,397", id="card-value",style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
+            html.H2("80,584", id="card-value",style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
                                                      'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ],
     )
@@ -53,7 +53,7 @@ card2 = dbc.Card(
             html.H4("ANC PATIENTS SEEN SINCE JAN-2016", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("5,676", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+            html.H2("5,986", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                      'family': "Times New Roman,Times,serif","color": "#23282D", }),
         ]
     )
@@ -64,7 +64,7 @@ card3 = dbc.Card(
             html.H4("PNC PATIENTS SEEN SINCE JAN-2016", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("1,730", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
+            html.H2("1,802", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
                                                      'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
@@ -75,7 +75,8 @@ card4 = dbc.Card(
             html.H4("FP PATIENTS SEEN SINCE JAN-2016", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("3,979", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
+
+            html.H2("4,308", id="card-value", style={"font-weight": "bold","text-align": "center", "font-size": "25px",
                                                      'family': "Times New Roman,Times,serif" , "color": "#23282D", }),
         ]
     )
@@ -86,7 +87,7 @@ card5 = dbc.Card(
             html.H4("DELIVERIES DONE SINCE JAN-2016", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H2("2,539", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
+            html.H2("2,654", id="card-value", style={"font-weight": "bold", "text-align": "center", "font-size": "25px",
                                                      'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
@@ -98,7 +99,7 @@ card6 = dbc.Card(
             html.H4("LIVES IMPROVED SINCE JAN-2016", id="card-title",
                     style={"font-weight": "bold", "text-align": "center", "font-size": "11px",
                            'family': "Times New Roman,Times,serif", }),
-            html.H3("103,102", id="card-value", style={"font-weight": "bold","text-align": "center","font-size": "25px",
+            html.H3("107,115", id="card-value", style={"font-weight": "bold","text-align": "center","font-size": "25px",
                                                        'family': "Times New Roman,Times,serif", "color": "#23282D", }),
         ]
     )
@@ -109,13 +110,15 @@ PATH = pathlib.Path(__file__) .parent
 DATA_PATH = PATH.joinpath("../data").resolve()
 
 df = pd.read_csv(DATA_PATH.joinpath("Dandu_Data.csv"))
+#df = pd.read_csv("https://raw.githubusercontent.com/kariukikimani/cpcsdata/main/Dandu_Data.csv")
+#df = pd.read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vQGODt93HTbrRpi3d5QQ__aVLmI6hU6bZVuHyerGOY8I2zj77JEusLrT4hveac7T2JxCl9VNbSG_mUy/pub?gid=1209301104&single=true&output=csv")
 df1 = pd.read_csv(DATA_PATH.joinpath("Dandu_Facility_Information_Data.csv"))
 
 fig = px.scatter(df, x='Year', y='GOPDClientsSeenPerMonth')
 fig.update_layout(title="GENERAL OUTPATIENT DEPARTMENT MONTHLY PERFORMANCE FOR DANDU",
                   font=dict(
                       family="Times New Roman,Times,serif",
-                      size=15,
+                      size=13,
                       color="#231F20",
                   ))
 fig.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -137,7 +140,7 @@ fig1 = px.scatter(df, x='Year', y='CWCClientsSeenPerMonth')
 fig1.update_layout(title="CHILD WELFARE CLINIC MONTHLY PERFORMANCE FOR DANDU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig1.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -159,7 +162,7 @@ fig2 = px.scatter(df, x='Year', y='ANCClientsSeenPerMonth')
 fig2.update_layout(title="ANTENATAL CARE CLINIC  MONTHLY PERFORMANCE FOR DANDU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig2.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -181,7 +184,7 @@ fig3 = px.scatter(df, x='Year', y='PNCClientsSeenPerMonth')
 fig3.update_layout(title="POSTNATAL CARE CLINIC  MONTHLY PERFORMANCE FOR DANDU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig3.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -203,7 +206,7 @@ fig4 = px.scatter(df, x='Year', y='FPClientsSeenPerMonth')
 fig4.update_layout(title="FAMILY PLANNING CLINIC  MONTHLY PERFORMANCE FOR DANDU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig4.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -225,7 +228,7 @@ fig5 = px.scatter(df, x='Year', y='DeliveriesCompletedPerMonth')
 fig5.update_layout(title="DELIVERIES MONTHLY PERFORMANCE FOR DANDU",
                    font=dict(
                        family="Times New Roman,Times,serif",
-                       size=15,
+                       size=13,
                        color="#231F20",
                    ))
 fig5.update_traces(mode='markers+lines', marker_color='rgb(0, 106, 76)')
@@ -247,7 +250,7 @@ layout = html.Div([
     commonmodules.get_header(),
     commonmodules.get_dandu_menu(),
     html.H3('DANDU MONTHLY DATA VISUALIZATION',
-            style={"font-weight": "bold", "text-align": "center", "font-size": "18px",
+            style={"font-weight": "bold", "text-align": "center", "font-size": "15px",
                    'family': "Times New Roman,Times,serif", }),
     html.Div([dash_table.DataTable(
 
@@ -259,7 +262,6 @@ layout = html.Div([
                                 'backgroundColor': 'white',
                                 'fontWeight': 'bold',
                                 'font-family': "Times New Roman",
-
                             },
                             style_cell={'textAlign': 'Center',  'overflow': 'hidden',
                                         'fontSize': 14,
